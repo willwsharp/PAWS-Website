@@ -17,64 +17,151 @@
         -webkit-transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
         -webkit-transform-style: preserve-3d;
       }
-      
       .building {
-      	height: 500px;
-        width: 600px;
+        height: 350px;
+        width: 550px;
       }
-      
- 	  .slideshow { 
-    	margin: 50px auto; 
-    	position: relative; 
-    	width: 600px; 
-    	height: 500px; 
-    	padding: 10px; 
-    	box-shadow: 0 0 20px rgba(0,0,0,0.4); 
-	  }
-
-	  .slideshow div { 
-    	position: absolute; 
-    	top: 10px; 
-    	left: 10px; 
-    	right: 10px; 
-    	bottom: 10px; 
-	  }
-
-      
+      .slideshow {
+        position: relative;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+        width: 550px;
+        height: 350px;
+        -webkit-transform: translate3d(631px, 151px, 0px);
+        -webkit-transform-style: preserve-3d;
+      }
+      .slideshow div {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+      }
+      .gwd-div-917p {
+        position: absolute;
+        z-index: -1;
+        width: 1053px;
+        height: 700px;
+        -webkit-transform-origin: 526.5px 350px 0px;
+        -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        left: 307px;
+        top: 17.5px;
+      }
+      .shortBlurb {
+        position: absolute;
+        width: 569px;
+        height: 159px;
+        left: 631px;
+        top: 559px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+      }
+      .title {
+        position: absolute;
+        height: 115px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+        -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        -webkit-transform-style: preserve-3d;
+        width: 1004px;
+        left: 330px;
+        top: 16px;
+      }
+      .menuContainer {
+        position: absolute;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+        left: 360px;
+        top: 190px;
+        width: 181px;
+        height: 223px;
+        -webkit-transform-origin: 82.3222891566px 117.9820368079px 0px;
+        -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      }
+      .imgTitle {
+        height: 115px;
+        width: 1000px;
+      }
+      .menu {
+        width: 100%;
+        list-style: none;
+        margin: 0px 0px 3em;
+        padding: 0px;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(204, 204, 204);
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgb(204, 204, 204);
+      }
+      .menu li a {
+      	text-align: center;
+        display: block;
+        padding: 8px 15px;
+        text-decoration: none;
+        font-weight: bold;
+        color: rgb(91, 172, 233);
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(204, 204, 204);
+      }
+      .menu li a:hover {
+        color: rgb(204, 0, 0);
+       	
+      }
     </style>
-    
-    
   </head>
   
   <body>
-  	<div class="slideshow">
-    	<div>
-        	<img class="building" src="http://i.imgur.com/DYkmMEf.jpg">    
-        </div>
-        <div>
-        	<img class="building" src="http://i.imgur.com/bhNpZVw.png">     
-        </div>
-        <div>
-        	<img class="building" src="http://i.imgur.com/C4YgaH1.jpg">
-        </div>
+    <div class="slideshow">
+      <div>
+        <img class="building" src="http://i.imgur.com/DYkmMEf.jpg">
+      </div>
+      <div>
+        <img class="building" src="http://i.imgur.com/bhNpZVw.png">
+      </div>
+      <div>
+        <img class="building" src="http://i.imgur.com/C4YgaH1.jpg">
+      </div>
+    </div>
+    <div class="shortBlurb"></div>
+    <div class="title">
+      <img class="imgTitle" src="http://i.imgur.com/qZPWP4M.png">
+    </div>
+    <div class="menuContainer">
+      <ul class="menu">
+        <li>
+          <a id="HomeButton" href="#">Home</a>
+        </li>
+        <li>
+          <a id="AboutPatricia" href="#">About Patricia</a>
+        </li>
+        <li>
+          <a id="ServicesButton" href="#">Services</a>
+        </li>
+        <li>
+          <a id="ResourcesButton" href="#">Resources</a>
+        </li>
+        <li>
+          <a id="GIButton" href="#">General Information</a>
+        </li>
+        <li>
+          <a id="ContactButton" href="#">Contact Us</a>
+        </li>
+      </ul>
     </div>
     <script>
-    	$(document).ready(function() {
-        	$(".slideshow div:gt(0)").hide(); 
-            setInterval(function() {
-            	$('.slideshow div:first')
-                .fadeOut(1000)
-                .next()
-                .fadeIn(1000)
-                .end()
-                .appendTo('.slideshow');
-            }, 3000);
-        
-        });
-        
-        
+      $(document).ready(function() {
+          	$(".slideshow div:gt(0)").hide(); 
+              setInterval(function() {
+              	$('.slideshow div:first')
+                  .fadeOut(1200)
+                  .next()
+                  .fadeIn(1200)
+                  .end()
+                  .appendTo('.slideshow');
+              }, 5000);
+          
+          });
     </script>
-  
+    <div class="gwd-div-917p"></div>
   </body>
 
 </html>
