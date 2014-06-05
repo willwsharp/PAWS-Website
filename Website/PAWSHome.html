@@ -74,6 +74,7 @@
         height: 223px;
         -webkit-transform-origin: 82.3222891566px 117.9820368079px 0px;
         -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        border-radius: 2px;
       }
       .imgTitle {
         height: 115px;
@@ -92,7 +93,7 @@
         border-top-color: rgb(204, 204, 204);
       }
       .menu li a {
-      	text-align: center;
+        text-align: center;
         display: block;
         padding: 8px 15px;
         text-decoration: none;
@@ -102,14 +103,11 @@
         border-bottom-style: solid;
         border-bottom-color: rgb(204, 204, 204);
       }
-      
-      <!--TODO:  Swapping content panes can probably be done by simply 
-      including all of them and going through them similar to an album, 
-      the drawback here is that there isn't necessarily different pages for 
-      each button such as PAWSWebsite/whatever.  I should look into this tomorrow.-->
       .menu li a:hover {
-        color: rgb(204, 0, 0);
-       	
+        background-color: #5bace9;
+        color: #fff;
+        transition: all 0.1s linear;
+        -webkit-transition: all 0.5s linear;
       }
     </style>
   </head>
