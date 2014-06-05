@@ -27,8 +27,8 @@
         box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
         width: 550px;
         height: 350px;
-        -webkit-transform: translate3d(631px, 151px, 0px);
         -webkit-transform-style: preserve-3d;
+        margin-bottom: 15px;
       }
       .slideshow div {
         position: absolute;
@@ -37,7 +37,7 @@
         right: 10px;
         bottom: 10px;
       }
-      .gwd-div-917p {
+      .websiteBorder {
         position: absolute;
         z-index: -1;
         width: 1053px;
@@ -45,15 +45,14 @@
         -webkit-transform-origin: 526.5px 350px 0px;
         -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
         left: 307px;
-        top: 17.5px;
+        top: 17.499999999999943px;
       }
       .shortBlurb {
         position: absolute;
         width: 569px;
         height: 159px;
-        left: 631px;
-        top: 559px;
         box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+        display: block;
       }
       .title {
         position: absolute;
@@ -68,13 +67,16 @@
       .menuContainer {
         position: absolute;
         box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
-        left: 360px;
-        top: 190px;
         width: 181px;
         height: 223px;
         -webkit-transform-origin: 82.3222891566px 117.9820368079px 0px;
         -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-        border-radius: 2px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        border-bottom-left-radius: 2px;
+        left: 382px;
+        top: 240px;
       }
       .imgTitle {
         height: 115px;
@@ -104,34 +106,57 @@
         border-bottom-color: rgb(204, 204, 204);
       }
       .menu li a:hover {
-        background-color: #5bace9;
-        color: #fff;
-        transition: all 0.1s linear;
+        background-color: rgb(91, 172, 233);
+        color: rgb(255, 255, 255);
+        transition: all 0.5s linear;
         -webkit-transition: all 0.5s linear;
+      }
+      
+      .menu li a.selectedMenu {
+      	background-color: rgb(91, 172, 233);
+        color: rgb(255, 255, 255);
+      }
+      .contentPanes {
+        position: absolute;
+        width: 604px;
+        height: 567px;
+        top: 152px;
+        left: 616px;
+        opacity: 0;
+        transition: 1s opacity;
+      }
+      
+      
+      #selectedContent {
+      	transition: 1s opacity;
+      	opacity: 1;
       }
     </style>
   </head>
   
   <body>
-    <div class="slideshow">
-      <div>
-        <img class="building" src="http://i.imgur.com/DYkmMEf.jpg">
+    <div class="contentPanes" id="selectedContent">
+      <div class="slideshow">
+        <div>
+          <img class="building" src="http://i.imgur.com/DYkmMEf.jpg">
+        </div>
+        <div>
+          <img class="building" src="http://i.imgur.com/bhNpZVw.png">
+        </div>
+        <div>
+          <img class="building" src="http://i.imgur.com/C4YgaH1.jpg">
+        </div>
       </div>
-      <div>
-        <img class="building" src="http://i.imgur.com/bhNpZVw.png">
-      </div>
-      <div>
-        <img class="building" src="http://i.imgur.com/C4YgaH1.jpg">
-      </div>
+      <div class="shortBlurb"></div>
     </div>
-    <div class="shortBlurb"></div>
+    <div class="contentPanes">butt</div>
     <div class="title">
       <img class="imgTitle" src="http://i.imgur.com/qZPWP4M.png">
     </div>
     <div class="menuContainer">
       <ul class="menu">
         <li>
-          <a id="HomeButton" href="#">Home</a>
+          <a class="selectedMenu" id="HomeButton" href="#">Home</a>
         </li>
         <li>
           <a id="AboutPatricia" href="#">About Patricia</a>
@@ -150,6 +175,8 @@
         </li>
       </ul>
     </div>
+    <div class="currentContent"></div>
+    <div class="homeContent"></div>
     <script>
       $(document).ready(function() {
           	$(".slideshow div:gt(0)").hide(); 
@@ -160,11 +187,31 @@
                   .fadeIn(1200)
                   .end()
                   .appendTo('.slideshow');
-              }, 5000);
-          
+              }, 5000); 
           });
     </script>
-    <div class="gwd-div-917p"></div>
+    <script>
+      $(document).ready(function() {
+      		$menuOpt = $('.menu li a');
+            $content = $('.contentPanes');
+	  //console.log($content);
+      var showCurrent = function(menu, item) {
+      var itemToShow = item;
+      var selectedMenu = menu;
+      console.log(itemToShow);
+      $menuOpt.removeClass('selectedMenu');
+      $content.removeAttr('id');
+      $menuOpt.eq(selectedMenu).addClass('selectedMenu');
+      $content.eq(itemToShow).attr('id', 'selectedContent');
+      };
+      
+	  $('#AboutPatricia').on('click', function() {
+	  	showCurrent($menuOpt.eq(1), $content.eq(1));
+	  });
+      
+      });
+    </script>
+    <div class="websiteBorder"></div>
   </body>
 
 </html>
