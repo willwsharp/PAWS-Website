@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   
   <head data-gwd-animation-mode="quickMode">
@@ -75,6 +75,7 @@
         border-top-right-radius: 2px;
         border-bottom-right-radius: 2px;
         border-bottom-left-radius: 2px;
+        background: white;
         left: 382px;
         top: 240px;
       }
@@ -124,100 +125,68 @@
         opacity: 0;
         transition: opacity 1s;
         -webkit-transition: opacity 1s;
+
       }
-      #selectedContent {
-        transition: opacity 1s;
-        -webkit-transition: opacity 1s;
-        -webkit-animation: rollIn;
-        opacity: 1;
-      }
+
       @-webkit-keyframes rollIn {
-        0% {
-          opacity: 0;
+            0% {
+                opacity: 0;
+                -webkit-transform: translateX(-100%) rotate(-20deg);
+            }
+            50% {
+                opacity: .8;
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateX(0px) rotate(0deg);
+            }
         }
-        100% {
-          opacity: 1;
-        }
-      }
       @-webkit-keyframes rollOut {
-        0% {
-          opacity: 1;
-          -webkit-transform: translateX(0px) rotate(0deg);
-        }
-        100% {
-          opacity: 0;
-          -webkit-transform: translateX(100%) rotate(120deg);
-        }
-      }
-      @-webkit-keyframes gwd-gen-qcav_animation {
-        0% {
-          -webkit-animation-timing-function: linear;
-        }
-        100% {
-          -webkit-animation-timing-function: linear;
+            0% {
+                opacity: 1;
+                -webkit-transform: translateX(0px) rotate(0deg);
+            }
+            50% {
+                opacity: .2;
+            }
+            100% {
+                opacity: 0;
+                -webkit-transform: translateX(100%) rotate(20deg);
         }
       }
-      @-webkit-keyframes title_animation {
-        0% {
-          -webkit-animation-timing-function: linear;
-        }
-        100% {
-          -webkit-animation-timing-function: linear;
-        }
+      @-webkit-keyframes fadeIn {
+          0% {
+              opacity:0;
+          }
+          100% {
+              opacity: 1;
+          }
+
       }
-      @-webkit-keyframes menuContainer_animation {
-        0% {
-          -webkit-animation-timing-function: linear;
-        }
-        100% {
-          -webkit-animation-timing-function: linear;
-        }
+
+
+
+      .rollIn {
+          -webkit-animation: rollIn;
+          -webkit-animation-fill-mode: forwards;
+          -webkit-animation-duration: 1.5s;
       }
-      @-webkit-keyframes currentContent_animation {
-        0% {
-          -webkit-animation-timing-function: linear;
+
+      .rollOut {
+           -webkit-animation: rollOut;
+           -webkit-animation-fill-mode: forwards;
+           -webkit-animation-duration: 1.5s;
         }
-        100% {
-          -webkit-animation-timing-function: linear;
-        }
+
+      #initialContent {
+          -webkit-animation: fadeIn forwards 2s;
       }
-      @-webkit-keyframes homeContent_animation {
-        0% {
-          -webkit-animation-timing-function: linear;
-        }
-        100% {
-          -webkit-animation-timing-function: linear;
-        }
-      }
-      @-webkit-keyframes gwd-gen-m0od_animation {
-        0% {
-          -webkit-animation-timing-function: linear;
-        }
-        100% {
-          -webkit-animation-timing-function: linear;
-        }
-      }
-      @-webkit-keyframes gwd-gen-zfoh_animation {
-        0% {
-          -webkit-animation-timing-function: linear;
-        }
-        100% {
-          -webkit-animation-timing-function: linear;
-        }
-      }
-      @-webkit-keyframes websiteBorder_animation {
-        0% {
-          -webkit-animation-timing-function: linear;
-        }
-        100% {
-          -webkit-animation-timing-function: linear;
-        }
-      }
+     
     </style>
   </head>
   
   <body>
-    <div class="contentPanes" id="selectedContent">
+    <div class="contentPanes" id="initialContent">
       <div class="slideshow">
         <div>
           <img class="building" src="http://i.imgur.com/DYkmMEf.jpg">
@@ -275,16 +244,27 @@
     <script>
       $(document).ready(function() {
       		$menuOpt = $('.menu li a');
-            $content = $('.contentPanes');
+      		$content = $('.contentPanes');
+      		var prevItem = 0;
+      		var removeAttr = 0;
 	  //console.log($content);
       var showCurrent = function(menu, item) {
       var itemToShow = item;
       var selectedMenu = menu;
       //console.log($menuOpt.eq(menu));
       $menuOpt.removeClass('selectedMenu');
-      $content.removeAttr('id');
       $menuOpt.eq(selectedMenu).addClass('selectedMenu');
-      $content.eq(itemToShow).attr('id', 'selectedContent');
+
+      $content.eq(prevItem).addClass('rollOut');
+      $content.eq(prevItem).removeClass('rollIn');
+
+      $content.eq(itemToShow).addClass('rollIn');
+      $content.eq(itemToShow).removeClass('rollOut');
+
+      if (removeAttr === 0) $content.removeAttr('id');
+      removeAttr = 1;
+
+      prevItem = item;
       };
       
       $('#HomeButton').on('click', function() {
