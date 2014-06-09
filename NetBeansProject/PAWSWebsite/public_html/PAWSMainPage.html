@@ -5,6 +5,7 @@
     <title>Law Office of Patricia A. Woodward</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="generator" content="Google Web Designer 1.0.6.0428">
+    <link type="text/css" rel="stylesheet" href="animations.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <style type="text/css">
         html, body {
@@ -49,9 +50,9 @@
         }
         .shortBlurb {
             position: absolute;
-            width: 569px;
-            z-index: -1;
-            height: 159px;
+            width: 570px;
+            height: 83px;
+            margin-top: 50px;
             box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
             display: block;
             background: #ececbd;
@@ -128,61 +129,13 @@
             transition: opacity 1s;
             box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
             -webkit-transition: opacity 1s;
-
-        }
-
-        @-webkit-keyframes rollIn {
-            0% {
-                opacity: 0;
-                -webkit-transform: translateX(-100%) rotate(-60deg);
-            }
-
-            100% {
-                opacity: 1;
-                -webkit-transform: translateX(0px) rotate(0deg);
-            }
-        }
-        @-webkit-keyframes rollOut {
-            0% {
-                opacity: 1;
-                -webkit-transform: translateX(0px) rotate(0deg);
-            }
-
-            50% {
-                opacity: .2;
-            }
-
-            100% {
-                opacity: 0;
-                -webkit-transform: translateX(100%) rotate(60deg);
-            }
-        }
-        @-webkit-keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-        .rollIn {
-            -webkit-animation: rollIn;
-            -webkit-animation-fill-mode: forwards;
-            -webkit-animation-duration: 1s;
-        }
-
-        .rollOut {
-            -webkit-animation: rollOut;
-            -webkit-animation-fill-mode: forwards;
-            -webkit-animation-duration: 1s;
         }
 
         .initialContent {
             -webkit-animation: fadeIn forwards 2s;
         }
         #homePage {
-            //box-shadow: none;
+            box-shadow: none;
         }
         
         #aboutPageTitle {
@@ -202,12 +155,32 @@
             margin-right: auto;
         }
 
-        .text {
-            z-index: 1;
+        .blurbText {
             position: relative;
             text-align: left;
-            font-size: 14px;
+            font-size: 18px;
             color: black;
+            height: 120px;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+        }
+        
+        .footer {
+            bottom: 150px;
+            left: 585px;
+            position: absolute;
+            background: rgb(91, 172, 233);
+            width: 602px;
+            height: 25px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+        }
+        
+        .footerText {
+            font-size: 11.5px;
+            color: #fff;
+            margin-left: 15px;
+            
         }
 
     </style>
@@ -227,10 +200,10 @@
         </div>
       </div>
       <div class="shortBlurb">
-          <span class="text"> Patricia Woodward has been 
+          <span class="blurbText"> Patricia Woodward has been 
           practicing law in Fauquier county for more than thirty years and
           has established herself as an experienced and effective attorney in her areas
-          of specialization.
+          of concentration.
           </span>
       </div>
     </div>
@@ -353,7 +326,13 @@
       
       });
     </script>
-    <div class="websiteBorder">
+    <div class='footer'>
+        <span class='footerText'>
+            31 S. Second Street, Warrenton VA 20187&nbsp;&nbsp;
+            T: 540-347-1482&nbsp;&nbsp;Fax: 866-876-2295
+            &nbsp;&nbsp;E-mail: paws@infionline.net
+        </span>
+        
     </div>
   </body>
 

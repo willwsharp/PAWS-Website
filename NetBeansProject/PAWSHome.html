@@ -50,6 +50,7 @@
         .shortBlurb {
             position: absolute;
             width: 569px;
+            z-index: -1;
             height: 159px;
             box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
             display: block;
@@ -181,7 +182,7 @@
             -webkit-animation: fadeIn forwards 2s;
         }
         #homePage {
-            box-shadow: none;
+            //box-shadow: none;
         }
         
         #aboutPageTitle {
@@ -201,6 +202,14 @@
             margin-right: auto;
         }
 
+        .text {
+            z-index: 1;
+            position: relative;
+            text-align: left;
+            font-size: 14px;
+            color: black;
+        }
+
     </style>
   </head>
   
@@ -217,7 +226,13 @@
           <img class="building" src="http://i.imgur.com/C4YgaH1.jpg">
         </div>
       </div>
-      <div class="shortBlurb"></div>
+      <div class="shortBlurb">
+          <span class="text"> Patricia Woodward has been 
+          practicing law in Fauquier county for more than thirty years and
+          has established herself as an experienced and effective attorney in her areas
+          of specialization.
+          </span>
+      </div>
     </div>
     <div class="contentPanes" id="aboutPage">
         <div id="aboutPageTitle">
