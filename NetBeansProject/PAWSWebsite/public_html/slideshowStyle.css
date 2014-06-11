@@ -1,0 +1,21 @@
+        .slideshow {
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 2;
+            position: relative;
+            top: 5px;
+            padding: 10px;
+            background: #fff;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 20px;
+            width: 550px;
+            height: 350px;
+            -webkit-transform-style: preserve-3d;
+            margin-bottom: 15px;
+        }
+        .slideshow div {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+        }

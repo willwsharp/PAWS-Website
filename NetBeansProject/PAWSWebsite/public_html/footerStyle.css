@@ -1,0 +1,17 @@
+       .footer {
+            text-align: center;
+            bottom: 150px;
+            left: 620px;
+            position: absolute;
+            background: rgba(91, 172, 233, 0.4);
+            width: 625px;
+            height: 25px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+        }
+
+        
+        .footerText {
+            font-size: 11px;
+            font-weight: bold;
+        }
+        

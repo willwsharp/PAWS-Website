@@ -1,0 +1,12 @@
+        .contentPanes {
+            position: absolute;
+            width: 604px;
+            height: 567px;
+            top: 152px;
+            left: 620px;
+            opacity: 0;
+            transition: opacity 1s;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+            background: #ececbd;
+            -webkit-transition: opacity 1s;
+        }
