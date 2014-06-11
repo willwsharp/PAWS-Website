@@ -41,7 +41,7 @@
         #copyright {
             -webkit-animation: none;
             position: absolute;
-            bottom: -100px;
+            bottom: 0px;
             width: 250px;
             left: 780px;
             font-size: 11px;
