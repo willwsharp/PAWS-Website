@@ -1,0 +1,49 @@
+        
+        .disclaimers a.selectedLegal {
+            background: #000;
+            color: #ececbd;
+        }
+
+        .disclaimers a{
+            text-decoration: none;
+            background: #ececbd;
+            width: 130px;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+            color: #000;
+        }
+        
+        #disclaimer{
+            position: absolute;
+            bottom: 110px;
+            left: 750px;
+            text-decoration: none;
+        }
+        
+        #disclaimer:hover {
+            background: #000;
+            color: #ececbd;
+            -webkit-transition: all 0.01s;
+        }
+        
+        #privacyInfo {
+            position: absolute;
+            text-decoration: none;
+            bottom: 110px;
+            left: 900px;
+        }
+        #privacyInfo:hover {
+            background: #000;
+            color: #ececbd;
+            -webkit-transition: all 0.01s;
+        }
+
+        #copyright {
+            -webkit-animation: none;
+            position: absolute;
+            bottom: -100px;
+            width: 250px;
+            left: 780px;
+            font-size: 11px;
+            background: white;
+        }

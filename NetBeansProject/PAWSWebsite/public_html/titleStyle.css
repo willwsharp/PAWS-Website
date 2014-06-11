@@ -1,0 +1,15 @@
+        .title {
+            position: absolute;
+            height: 110px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+            -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            -webkit-transform-style: preserve-3d;
+            width: 900px;
+            left: 382.8px;
+            top: 16px;
+        }
+
+        .titleImg {
+            height: 110px;
+            width: 900px;
+        }

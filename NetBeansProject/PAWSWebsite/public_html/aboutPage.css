@@ -1,0 +1,30 @@
+        
+        #aboutPageTitle {
+            width: 100%;
+            height: 80px;
+            background: #fff;
+
+        }
+        #aboutPageBody {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            width: 97%;
+            height: 487px;
+            background: #ececbd;
+        }
+        .aboutImg {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #aboutBodyText {
+            position: absolute;
+            font-size: 18px;
+            top: 10px;
+            left: 12px;
+            border: solid 2px;
+            width: 95%;
+            height: 95%;   
+        }
