@@ -1,0 +1,13 @@
+        #contactPageTitle {
+            width: 100%;
+            height: 80px;
+            background: #fff;
+        }
+        
+        .contactPageImg {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+

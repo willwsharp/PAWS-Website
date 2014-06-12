@@ -1,0 +1,12 @@
+        #resourcesPageTitle {
+            width: 100%;
+            height: 80px;
+            background: #fff;
+        }
+        
+        .resourcesImg {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+

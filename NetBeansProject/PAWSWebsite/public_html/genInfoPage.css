@@ -1,0 +1,13 @@
+        #genInfoPageTitle {
+            width: 100%;
+            height: 80px;
+            background: #fff;
+        }
+        
+        .genInfoImg {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+

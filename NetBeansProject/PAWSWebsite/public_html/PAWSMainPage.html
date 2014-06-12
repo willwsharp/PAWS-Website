@@ -14,8 +14,18 @@
     <link type='text/css' rel='stylesheet' href='menuStyle.css'>
     <link type='text/css' rel='stylesheet' href='slideshowStyle.css'>
     <link type='text/css' rel='stylesheet' href='titleStyle.css'>
+    <link type='text/css' rel='stylesheet' href='servicesPage.css'>
+    <link type='text/css' rel='stylesheet' href='resourcesPage.css'>
+    <link type='text/css' rel='stylesheet' href='genInfoPage.css'>
+    <link type='text/css' rel='stylesheet' href='contactPage.css'>
+    <link type='text/css' rel='stylesheet' href='disclaimerPage.css'>
+    <link type='text/css' rel='stylesheet' href='privacyPage.css'>
+    <link type='text/css' rel='stylesheet' href='consultationStyle.css'>
     
-    <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
+
+    
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.min.js'>
+    </script>
     <style type='text/css'>
         html, body {
             width: 100%;
@@ -24,7 +34,8 @@
         }
         body {
             background-color: transparent;
-            -webkit-transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            -webkit-transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 
+                0, 0, 0, 1, 0, 0, 0, 0, 1);
             -webkit-transform-style: preserve-3d;
         }
 
@@ -57,8 +68,8 @@
       <div class='shortBlurb'>
           <span class='blurbText'> Patricia Woodward has been 
           practicing law in Fauquier County for more than thirty years and
-          has established herself as an experienced and effective attorney in her areas
-          of concentration.
+          has established herself as an experienced and effective attorney in 
+          her areas of concentration.
           </span>
       </div>
     </div>
@@ -73,30 +84,59 @@
         </div>
     </div>
     <div class='contentPanes' id='servicesPage'>
-
+        <div id='servicesPageTitle'>
+            <img class='servicesImg' src='http://i.imgur.com/ELLZj9H.png'>
+        </div>
+        <div id='servicesPageBody'>
+            <span id='servicesBodyText'>
+                I am engaged in a general practice of law.  My areas
+                of practice include:
+            </span>
+            <ul id='servicesList'>
+                <li>Estate Planning</li>
+                <li>Estate administration</li>
+                <li>Real estate matters including sales,
+                purchases, and refinances</li>
+                <li>Real estate Partition actions</li>
+                <li>Guardianships and Conservatorships</li>
+                <li>Creation of corporations, limited liability
+                    companies, partnerships and other <br>
+                    business matters</li>
+            </ul>
+        </div>
     </div>
 
     <div class='contentPanes' id='resourcesPage'>
-
+        <div id='resourcesPageTitle'>
+            <img class='resourcesImg' src='https://i.imgur.com/nrEexRc.png'>
+        </div>
 
     </div>
 
     <div class='contentPanes' id='generalPage'>
-
+        <div id='genInfoPageTitle'>
+            <img class='genInfoImg' src='https://i.imgur.com/AQzfrdj.png'>
+        </div>
 
     </div>
 
     <div class='contentPanes' id='contactPage'>
-
+        <div id='contactPageTitle'>
+            <img class='contactPageImg' src='https://i.imgur.com/qmb6YzK.png'>
+        </div>
 
     </div>
 
     <div class='contentPanes' id='disclaimerPage'>
-          
+        <div id='disclaimerPageTitle'>
+            <img class='disclaimerImg' src='https://i.imgur.com/j6ZakfV.png'>
+        </div>
     </div>
       
     <div class='contentPanes' id='privacyPage'>
-          
+        <div id='privacyPageTitle'>
+            <img class='privacyImg' src='https://i.imgur.com/pC9PQWH.png'>
+        </div>
     </div>
     <div class='title'>
         <img class='titleImg' src='http://i.imgur.com/8FzOPdz.png'> 
@@ -125,13 +165,6 @@
     </div>
     <script type='text/javascript' src='slideshow.js'></script>
     <script type='text/javascript' src='transitionAndMenuScript.js'></script>
-    <div class='footer'>
-        <span class='footerText'>
-            31 S. Second Street, Warrenton VA 20187&nbsp;&nbsp;&nbsp;
-            T: 540-347-1482&nbsp;&nbsp;&nbsp;Fax: 866-876-2295
-            &nbsp;&nbsp;&nbsp;E-mail: paws@infionline.net
-        </span>
-    </div>
     <div class='disclaimers'>
         <a href='#' id='disclaimer'> Disclaimer </a>
         <a href='#' id='privacyInfo'> Privacy Statement</a>
@@ -140,6 +173,16 @@
         </div>
     </div>
     <div class='websiteBorder'>
+      <div class='footer'>
+        <span class='footerText'>
+            31 S. Second Street, Warrenton VA 20187&nbsp;&nbsp;&nbsp;
+            T: 540-347-1482&nbsp;&nbsp;&nbsp;Fax: 866-876-2295
+            &nbsp;&nbsp;&nbsp;E-mail: paws@infionline.net
+        </span>
+      </div>        
+    </div>
+    <div class='consultation'>
+        Call to schedule a consultation
     </div>
   </body>
 </html>

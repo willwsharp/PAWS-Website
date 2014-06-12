@@ -1,17 +1,21 @@
        .footer {
             text-align: center;
-            bottom: 150px;
-            left: 620px;
-            position: absolute;
+            bottom: -87%;
+            margin-left: auto;
+            margin-right: 13%;
+            position: relative;
             background: #5bace9;
             width: 604px;
-            height: 25px;
+            height: 35px;
             box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+            
         }
 
         
         .footerText {
-            font-size: 11px;
+            top: 5.5px;
+            position: relative;
+            font-size: 13px;
             color: #fff;
         }
         
