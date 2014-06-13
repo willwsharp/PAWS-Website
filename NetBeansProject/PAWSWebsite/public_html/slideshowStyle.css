@@ -7,15 +7,15 @@
             padding: 10px;
             background: #fff;
             box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 20px;
-            width: 550px;
-            height: 350px;
+            width: 540px;
+            height: 340px;
             -webkit-transform-style: preserve-3d;
             margin-bottom: 15px;
         }
         .slideshow div {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 5px;
+            left: 5px;
             right: 10px;
             bottom: 10px;
         }

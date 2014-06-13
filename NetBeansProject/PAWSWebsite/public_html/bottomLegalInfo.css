@@ -12,11 +12,12 @@
             box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
             color: #000;
         }
-        
+        .disclaimers {
+            position: relative;
+            bottom: -91%;
+            margin-left: 49%;
+        }
         #disclaimer{
-            position: absolute;
-            bottom: 110px;
-            left: 750px;
             text-decoration: none;
         }
         
@@ -27,10 +28,8 @@
         }
         
         #privacyInfo {
-            position: absolute;
             text-decoration: none;
-            bottom: 110px;
-            left: 900px;
+            margin-left: 4%;
         }
         #privacyInfo:hover {
             background: #000;
@@ -40,10 +39,11 @@
 
         #copyright {
             -webkit-animation: none;
-            position: absolute;
-            bottom: 0px;
+            position: relative;
+            bottom: -104%;
             width: 250px;
-            left: 780px;
             font-size: 11px;
             background: white;
+            margin-left: auto;
+            margin-right: 29%;
         }

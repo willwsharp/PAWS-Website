@@ -4,10 +4,28 @@
             background: #fff;
         }
         
-        .disclaimerImg {
+        #disclaimerImg {
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
-
+        
+        #disclaimerPageBody {
+            position: relative;
+            height: 487px;
+            width: 97%;
+        }
+        
+        #disclaimerPageText {
+            position: absolute;
+            top: 8.8px;
+            left: 17px;
+            padding: 5px 5px 5px 5px;
+            border: 2px solid black;
+            
+            width: 95%;
+            height: 93%;
+            
+            
+        }
 
