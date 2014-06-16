@@ -10,3 +10,20 @@
             margin-right: auto;
         }
 
+        #privacyPageBody {
+            position: relative;
+            height: 487px;
+            width: 97%;
+        }
+        
+        #privacyPageText {
+            position: absolute;
+            top: 8.8px;
+            left: 17px;
+            padding: 5px 5px 5px 5px;
+            border: 2px solid black;
+            text-align: justify;
+            
+            width: 95%;
+            height: 93%;       
+        }

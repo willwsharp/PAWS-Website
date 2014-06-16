@@ -1,6 +1,6 @@
 .consultation {
     position: relative;
-    bottom: -43%;
+    bottom: -50%;
     margin-left: 5%;
     box-shadow: rgba(0, 0, 0, 0.4) 0 0 20px;
     border-radius: 2px;
@@ -21,14 +21,14 @@
     position: relative;
     font-weight: bold;
     font-size: 25px;
-    color: #5bace9;
+    color: black;
     top: 20px;
 }
 
 #consultationText {
     position: relative;
     font-size: 20px;
-    color: #5bace9;
+    color: black;
     font-weight: bold;
     top: 10px;
 }

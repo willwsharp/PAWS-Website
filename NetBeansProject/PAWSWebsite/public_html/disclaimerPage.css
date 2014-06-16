@@ -22,10 +22,9 @@
             left: 17px;
             padding: 5px 5px 5px 5px;
             border: 2px solid black;
+            text-align: justify;
             
             width: 95%;
-            height: 93%;
-            
-            
+            height: 93%;       
         }
 
