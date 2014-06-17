@@ -29,6 +29,13 @@
             border-top-color: rgb(204, 204, 204);
         }
         
+        #pullOutImg {
+            position: relative;
+            float: right;
+            bottom: 30px;
+            right: 5px;
+        }
+        
         .menu li a {
             text-align: center;
             display: block;
@@ -39,49 +46,6 @@
             border-bottom-width: 1px;
             border-bottom-style: solid;
             border-bottom-color: rgb(204, 204, 204);
-        }
-
-        #submenu {
-            //submenu
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
-            background: white;
-            position: absolute;
-            left: 150px;
-            top: 125.4px;
-            //top: 160px;
-            visibility: hidden;
-            list-style: none;
-            overflow: hidden;
-            height: 0px;
-        }   
-        
-        #submenu li a {
-            //float: left;
-            position: relative;
-            width: 0px;
-        }
-        
-        /*
-        .menu li ul li {
-            text-align: center;
-            position: relative;
-            float: left;
-            display: block;
-            padding: 8px 15px;
-            text-decoration: none;
-            font-size: 13px;
-            color: #5bace9;
-            border-bottom-width: 1px;
-            border-bottom-style: solid;
-            border-bottom-color: rgb(204, 204, 204);
-        }*/
-        
-        .menu li:hover > #submenu{
-            visibility: visible;
-            overflow: visible;
-            //width: 100px;
-            height: auto;
-            display: block;
         }
         
         .menu li a:hover {
@@ -95,4 +59,70 @@
             background-color: rgb(91, 172, 233);
             color: rgb(255, 255, 255);
         }
+
+        
+        #submenu {
+            //submenu
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;            
+            background: white;
+            position: absolute;
+            left: 181px;
+            top: 108px;
+            list-style: none;
+            margin: 0px 0px 3em;
+            padding: 0px;
+            visibility: hidden;
+            overflow: hidden;
+            height: 0px;
+        }   
+        
+        #submenu li a {
+            position: relative;
+            text-align: center;
+            background: white;
+            font-size: 12px;
+            border: 1px solid rgb(204, 204, 204);           
+            
+        }
+        
+        #submenu li a:hover {
+            background: #5bace9;
+            color: #fff;
+        }
+        
+        .menu li:hover > #submenu{
+            visibility: visible;
+            overflow: visible;
+            display: block;
+        }
+
+        #faqSubmenu {
+            background: white;
+            position: absolute;
+            left: 64.3px;
+            top: 40px;
+            width: 77px;
+            list-style: none;
+            margin: 0px 0px 3em;
+            padding: 0px;
+            visibility: hidden;
+            overflow: hidden;
+            height: 0px;            
+        }
+        
+        #faqSubmenu li a {
+            position: relative;
+            text-align: center;
+            background: white;
+            font-size: 11px;
+        }
+        
+        #submenu li:hover > #faqSubmenu {
+            visibility: visible;
+            overflow: visible;
+            display: block;
+        }
+        
+        
+        
         
