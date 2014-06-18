@@ -19,15 +19,42 @@
             width: 97%;
             height: 487px;
             background: #ececbd;
+            z-index: -1;
         }
 
         #aboutBodyText {
             position: absolute;
-            font-size: 24px;
+            font-size: 17px;
             top: 10px;
             left: 8px;
             border: solid 2px;
             width: 95%;
             height: 93%;  
             padding: 5px 5px 5px 5px;
+            text-align: justify;
+        }
+        
+        #aboutBodyGroupList {
+            position: relative;
+            bottom: 5px;
+        }
+        
+        #additionalGroupInfo {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            border-radius: 2px;
+            position: relative;
+            top: 450px;
+            left: 50%;
+            width: 280px;
+            background: white;
+        }
+        
+        #additionalGroupLink {
+            text-decoration: none;
+            color: #5bace9;
+        }
+        
+        #additionalGroupInfo:hover {
+            color: white;
+            background: #5bace9;
         }
