@@ -18,6 +18,7 @@ $(document).ready(function() {
           console.log($bottomLegal.eq(legalTemp));
           $bottomLegal.removeClass('selectedLegal');
           $bottomLegal.eq(legalTemp).addClass('selectedLegal');
+          $menuOpt.removeClass('selectedMenu');
       }
       else {
           $bottomLegal.removeClass('selectedLegal');
