@@ -1,8 +1,9 @@
         .contentPanes {
-            position: absolute;
+            display: block;
+            position: relative;
             width: 604px;
             height: 567px;
-            top: 152px;
+            top: 150px;
             left: 620px;
             opacity: 0;
             transition: opacity 1s;
