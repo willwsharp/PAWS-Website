@@ -10,7 +10,7 @@
             border:  solid 2px #000;
         }
         #homePage {
-            //display: block;
+            //box-shadow: none;
         }
         
         
@@ -27,5 +27,4 @@
         
         .initialContent {
             -webkit-animation: fadeIn forwards 2s;
-            display: block;
         }

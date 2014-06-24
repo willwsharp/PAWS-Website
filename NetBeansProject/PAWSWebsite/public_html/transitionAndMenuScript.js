@@ -25,17 +25,11 @@ $(document).ready(function() {
       }
       
       $content.removeClass('rollOut');
-      $content.removeClass('hide');
       $content.eq(prevItem).addClass('rollOut');
-      $content.eq(prevItem).addClass('hide');
-
       $content.eq(prevItem).removeClass('rollIn');
-      $content.eq(prevItem).removeClass('show');
-      
-      $content.eq(itemToShow).addClass('show');
+
       $content.eq(itemToShow).addClass('rollIn');
       $content.eq(itemToShow).removeClass('rollOut');
-      $content.eq(itemToShow).removeClass('hide');
 
       if (removeAttr === 0) $content.removeClass('initialContent');
       removeAttr = 1;
