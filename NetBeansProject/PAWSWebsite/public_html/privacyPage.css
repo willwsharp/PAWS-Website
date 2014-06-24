@@ -1,6 +1,6 @@
         #privacyPageTitle {
             width: 100%;
-            height: 88px;
+            height: 60px;
             background: #fff;
         }
         
@@ -8,22 +8,21 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            height: 60px;
         }
 
         #privacyPageBody {
+            display: block;
+            margin-left: 7px;
+            margin-right: auto;
             position: relative;
-            height: 487px;
-            width: 97%;
+            top: 10px;
+            width: 95%;
+            height: 84%;
+            border: solid 2px;
+            font-size: 17px;
+            padding: 5px 5px 5px 5px;
+            text-align: justify;
+            z-index: -1;  
         }
         
-        #privacyPageText {
-            position: absolute;
-            top: 8.8px;
-            left: 17px;
-            padding: 5px 5px 5px 5px;
-            border: 2px solid black;
-            text-align: justify;
-            
-            width: 95%;
-            height: 93%;       
-        }
