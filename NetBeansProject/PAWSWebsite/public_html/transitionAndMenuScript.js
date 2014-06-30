@@ -1,5 +1,5 @@
 $(document).ready(function() {
-      		$menuOpt = $('.menu li a');
+      		$menuOpt = $('.menu > li > a');
       		$content = $('.contentPanes');
                 $bottomLegal = $('.disclaimers a');
       		var prevItem = 0;
@@ -39,8 +39,9 @@ $(document).ready(function() {
 
       if (removeAttr === 0) $content.removeClass('initialContent');
       removeAttr = 1;
-
+      
       prevItem = item;
+
       };
       
       $('#HomeButton').on('click', function() {

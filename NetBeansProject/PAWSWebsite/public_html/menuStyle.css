@@ -29,12 +29,6 @@
             border-top-color: rgb(204, 204, 204);
         }
         
-        #pullOutImg {
-            position: relative;
-            float: right;
-            bottom: 30px;
-            right: 5px;
-        }
         
         .menu li a {
             text-align: center;
@@ -67,13 +61,13 @@
             background: white;
             position: absolute;
             left: 181px;
-            top: 108px;
+            top: 124.5px;
             list-style: none;
             margin: 0px 0px 3em;
             padding: 0px;
             visibility: hidden;
             overflow: hidden;
-            height: 0px;
+            width: 115px;
         }   
         
         #submenu li a {
@@ -81,8 +75,8 @@
             text-align: center;
             background: white;
             font-size: 12px;
-            border: 1px solid rgb(204, 204, 204);           
-            
+            border: 1px solid rgb(204, 204, 204); 
+            height: 19.4px;
         }
         
         #submenu li a:hover {
@@ -96,33 +90,28 @@
             display: block;
         }
 
-        #faqSubmenu {
-            background: white;
-            position: absolute;
-            left: 64.3px;
-            top: 40px;
-            width: 77px;
-            list-style: none;
-            margin: 0px 0px 3em;
-            padding: 0px;
-            visibility: hidden;
-            overflow: hidden;
-            height: 0px;            
-        }
-        
-        #faqSubmenu li a {
+        #pullOutImg {
             position: relative;
-            text-align: center;
-            background: white;
-            font-size: 11px;
+            float: right;
+            bottom: 30px;
+            right: 5px;
         }
         
-        #submenu li:hover > #faqSubmenu {
-            visibility: visible;
-            overflow: visible;
+        #pullInImg {
+            position: relative;
+            float: right;
+            bottom: 30px;
+            right: 5px;
+            display: none;
+        }
+        
+        .menu li:hover > #pullOutImg {
+            display: none;
+        }
+        
+        
+        .menu li:hover > #pullInImg {
             display: block;
         }
-        
-        
         
         
