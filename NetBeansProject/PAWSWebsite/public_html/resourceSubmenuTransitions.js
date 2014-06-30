@@ -1,41 +1,23 @@
 $(document).ready(function() {
-      		$menuOpt = $('.menu > li > a');
+      		$submenuOpt = $('#submenu li');
       		$content = $('.contentPanes');
                 $bottomLegal = $('.disclaimers a');
-                $submenu = $('#submenu');
       		var prevItem = 0;
       		var removeAttr = 0;
-      var showCurrent = function(menu, item) {
+      var showCurrentSubmenu = function(menu, item) {
       var itemToShow = item;
       var selectedMenu = menu;
       var legalTemp = 0;
+            
+      $submenuOpt.removeClass('selectedMenu');
+      $submenuOpt.eq(selectedMenu).addClass('selectedMenu');
       
-      $menuOpt.removeClass('selectedMenu');
-      $menuOpt.eq(selectedMenu).addClass('selectedMenu');
-      
-      if(selectedMenu === 3) {
-          if ($submenu.hasClass('show')) {
-            $submenu.removeClass('show');
-            $submenu.addClass('hide');  
-            return;
-          }
-          else {
-          $submenu.removeClass('hide');
-          $submenu.addClass('show');
-          return;
-      }
-      }
-      else {
-          $submenu.removeClass('show');
-          $submenu.addClass('hide'); 
-      }
-      
-      if(selectedMenu === 6 || selectedMenu === 7) {
-          legalTemp = selectedMenu - 6;
+      if(selectedMenu === 7 || selectedMenu === 8) {
+          legalTemp = selectedMenu - 7;
           console.log($bottomLegal.eq(legalTemp));
           $bottomLegal.removeClass('selectedLegal');
           $bottomLegal.eq(legalTemp).addClass('selectedLegal');
-          $menuOpt.removeClass('selectedMenu');
+          $submenuOpt.removeClass('selectedMenu');
       }
       else {
           $bottomLegal.removeClass('selectedLegal');
@@ -62,34 +44,34 @@ $(document).ready(function() {
       };
       
       $('#HomeButton').on('click', function() {
-      	showCurrent(0, 0);
+      	showCurrentSubmenu(0, 0);
       });
       
       $('#AboutPatricia').on('click', function() {
-	showCurrent(1, 1);
+	showCurrentSubmenu(1, 1);
       });
       
       $('#ServicesButton').on('click', function() {
-	  	showCurrent(2, 2);
+	  	showCurrentSubmenu(2, 2);
 	  });
       
       $('#ResourcesButton').on('click', function() {
-	  	showCurrent(3, 3);
+	  	showCurrentSubmenu(3, 3);
 	  });
       
       $('#GIButton').on('click', function() {
-	  	showCurrent(4, 4);
+	  	showCurrentSubmenu(4, 4);
 	  });
       
       $('#ContactButton').on('click', function() {
-	  	showCurrent(5, 5);
+	  	showCurrentSubmenu(5, 5);
 	  });
           
       $('#disclaimer').on('click', function() {
-                showCurrent(6, 6);
+                showCurrentSubmenu(6, 6);
           });
       $('#privacyInfo').on('click', function() {
-                showCurrent(7, 7);
+                showCurrentSubmenu(7, 7);
           });
       
       });

@@ -65,7 +65,6 @@
             list-style: none;
             margin: 0px 0px 3em;
             padding: 0px;
-            visibility: hidden;
             overflow: hidden;
             width: 115px;
         }   
@@ -84,34 +83,37 @@
             color: #fff;
         }
         
-        .menu li:hover > #submenu{
-            visibility: visible;
-            overflow: visible;
-            display: block;
-        }
 
         #pullOutImg {
-            position: relative;
+            position: absolute;
             float: right;
-            bottom: 30px;
+            bottom: 97px;
             right: 5px;
+            transition: all .01s;
         }
         
         #pullInImg {
-            position: relative;
+            position: absolute;
             float: right;
-            bottom: 30px;
+            bottom: 97px;
             right: 5px;
             display: none;
+            transition: all .01s;            
         }
         
-        .menu li:hover > #pullOutImg {
+        .menu li a:hover > #pullOutImg {
             display: none;
         }
         
         
-        .menu li:hover > #pullInImg {
+        .menu li a:hover > #pullInImg {
             display: block;
         }
         
+        .show {
+            display: block;
+        }
         
+        .hide {
+            display: none;
+        }
