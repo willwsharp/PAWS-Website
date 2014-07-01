@@ -1,49 +1,49 @@
         
-        .disclaimers a.selectedLegal {
-            background: #000;
-            color: #ececbd;
-        }
+.disclaimers a.selectedLegal {
+    background: #000;
+    color: #ececbd;
+}
 
-        .disclaimers a{
-            text-decoration: none;
-            background: #ececbd;
-            width: 130px;
-            text-align: center;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
-            color: #000;
-        }
-        .disclaimers {
-            position: relative;
-            bottom: -82%;
-            margin-left: 49%;
-        }
-        #disclaimer{
-            text-decoration: none;
-        }
-        
-        #disclaimer:hover {
-            background: #000;
-            color: #ececbd;
-            -webkit-transition: all 0.01s;
-        }
-        
-        #privacyInfo {
-            text-decoration: none;
-            margin-left: 4%;
-        }
-        #privacyInfo:hover {
-            background: #000;
-            color: #ececbd;
-            -webkit-transition: all 0.01s;
-        }
+.disclaimers a{
+    text-decoration: none;
+    background: #ececbd;
+    width: 130px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+    color: #000;
+}
+.disclaimers {
+    position: relative;
+    bottom: -82%;
+    margin-left: 49%;
+}
+#disclaimer{
+    text-decoration: none;
+}
 
-        #copyright {
-            -webkit-animation: none;
-            position: relative;
-            bottom: -94%;
-            width: 250px;
-            font-size: 11px;
-            background: white;
-            margin-left: auto;
-            margin-right: 29%;
-        }
+#disclaimer:hover {
+    background: #000;
+    color: #ececbd;
+    -webkit-transition: all 0.01s;
+}
+
+#privacyInfo {
+    text-decoration: none;
+    margin-left: 4%;
+}
+#privacyInfo:hover {
+    background: #000;
+    color: #ececbd;
+    -webkit-transition: all 0.01s;
+}
+
+#copyright {
+    -webkit-animation: none;
+    position: relative;
+    bottom: -94%;
+    width: 250px;
+    font-size: 11px;
+    background: white;
+    margin-left: auto;
+    margin-right: 29%;
+}

@@ -1,28 +1,27 @@
-        #privacyPageTitle {
-            width: 100%;
-            height: 60px;
-            background: #fff;
-        }
-        
-        .privacyImg {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            height: 60px;
-        }
+#privacyPageTitle {
+    width: 100%;
+    height: 60px;
+    background: #fff;
+}
 
-        #privacyPageBody {
-            display: block;
-            margin-left: 7px;
-            margin-right: auto;
-            position: relative;
-            top: 10px;
-            width: 95%;
-            height: 84%;
-            border: solid 2px;
-            font-size: 17px;
-            padding: 5px 5px 5px 5px;
-            text-align: justify;
-            z-index: -1;  
-        }
-        
+.privacyImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+}
+
+#privacyPageBody {
+    display: block;
+    margin-left: 7px;
+    margin-right: auto;
+    position: relative;
+    top: 10px;
+    width: 95%;
+    height: 84%;
+    border: solid 2px;
+    font-size: 17px;
+    padding: 5px 5px 5px 5px;
+    text-align: justify;
+    z-index: -1;  
+}

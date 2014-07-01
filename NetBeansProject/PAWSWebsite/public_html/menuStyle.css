@@ -1,119 +1,128 @@
-        .menuContainer {
-            position: absolute;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
-            width: 181px;
-            height: 253px;
-            -webkit-transform-origin: 82.3222891566px 117.9820368079px 0px;
-            -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            border-top-left-radius: 2px;
-            border-top-right-radius: 2px;
-            border-bottom-right-radius: 2px;
-            border-bottom-left-radius: 2px;
-            background: white;
-            left: 382px;
-            top: 152px;
-        }
-        
-        .menu {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            list-style: none;
-            margin: 0px 0px 3em;
-            padding: 0px;
-            border-bottom-width: 1px;
-            border-bottom-style: solid;
-            border-bottom-color: rgb(204, 204, 204);
-            border-top-width: 1px;
-            border-top-style: solid;
-            border-top-color: rgb(204, 204, 204);
-        }
-        
-        
-        .menu li a {
-            text-align: center;
-            display: block;
-            padding: 10.5px 15px;
-            text-decoration: none;
-            font-weight: bold;
-            color: rgb(91, 172, 233);
-            border-bottom-width: 1px;
-            border-bottom-style: solid;
-            border-bottom-color: rgb(204, 204, 204);
-        }
-        
-        .menu li a:hover {
-            background-color: rgb(91, 172, 233);
-            color: rgb(255, 255, 255);
-            -webkit-transition: all 0.01s;
-            transition: all 0.01s;
-        }
-        
-        .menu li a.selectedMenu {
-            background-color: rgb(91, 172, 233);
-            color: rgb(255, 255, 255);
-        }
+.menuContainer {
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+    width: 181px;
+    height: 253px;
+    -webkit-transform-origin: 82.3222891566px 117.9820368079px 0px;
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background: white;
+    left: 382px;
+    top: 152px;
+}
 
-        
-        #submenu {
-            //submenu
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;            
-            background: white;
-            position: absolute;
-            left: 181px;
-            top: 124.5px;
-            list-style: none;
-            margin: 0px 0px 3em;
-            padding: 0px;
-            overflow: hidden;
-            width: 115px;
-        }   
-        
-        #submenu li a {
-            position: relative;
-            text-align: center;
-            background: white;
-            font-size: 12px;
-            border: 1px solid rgb(204, 204, 204); 
-            height: 19.4px;
-        }
-        
-        #submenu li a:hover {
-            background: #5bace9;
-            color: #fff;
-        }
-        
+.menu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: 0px 0px 3em;
+    padding: 0px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(204, 204, 204);
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(204, 204, 204);
+}
 
-        #pullOutImg {
-            position: absolute;
-            float: right;
-            bottom: 97px;
-            right: 5px;
-            transition: all .01s;
-        }
-        
-        #pullInImg {
-            position: absolute;
-            float: right;
-            bottom: 97px;
-            right: 5px;
-            display: none;
-            transition: all .01s;            
-        }
-        
-        .menu li a:hover > #pullOutImg {
-            display: none;
-        }
-        
-        
-        .menu li a:hover > #pullInImg {
-            display: block;
-        }
-        
-        .show {
-            display: block;
-        }
-        
-        .hide {
-            display: none;
-        }
+
+.menu li a {
+    text-align: center;
+    display: block;
+    padding: 10.5px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(91, 172, 233);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(204, 204, 204);
+}
+
+.menu li a:hover {
+    background-color: rgb(91, 172, 233);
+    color: rgb(255, 255, 255);
+    -webkit-transition: all 0.01s;
+    transition: all 0s;
+}
+
+.menu li a.selectedMenu {
+    background-color: rgb(91, 172, 233);
+    color: rgb(255, 255, 255);
+}
+
+
+#submenu {
+    //submenu
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;            
+    background: white;
+    position: absolute;
+    left: 181px;
+    top: 124.5px;
+    list-style: none;
+    margin: 0px 0px 3em;
+    padding: 0px;
+    overflow: hidden;
+    width: 115px;
+}
+
+#submenu li a.selectedSubmenu {
+    background-color: #5bace9;
+    color: #ececbd;
+}
+
+#submenu li a {
+    position: relative;
+    text-align: center;
+    background: white;
+    font-size: 12px;
+    border: 1px solid rgb(204, 204, 204); 
+    height: 19.4px;
+    transition: all 0s;
+}
+
+#submenu li a:hover {
+    background: #5bace9;
+    color: #fff;
+}
+
+
+#pullOutImg {
+    position: absolute;
+    float: right;
+    bottom: 97px;
+    right: 5px;
+    transition: all 0s;
+}
+
+#hoverPullOutImg {
+    position: absolute;
+    float: right;
+    bottom: 97px;
+    right: 5px;
+    transition: all 0s;
+    z-index: -1;
+}
+
+#pullInImg {
+    position: absolute;
+    float: right;
+    bottom: 97px;
+    right: 5px;
+    transition: all 0s;            
+}
+
+.menu li a:hover > #hoverPullOutImg {
+    z-index: 0;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}

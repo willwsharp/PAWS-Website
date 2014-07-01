@@ -1,17 +1,17 @@
-        .title {
-            position: relative;
-            height: 80px;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
-            -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            -webkit-transform-style: preserve-3d;
-            width: 650px;
-            //left: 496px;
-            margin-left: 27.6%;
-            margin-right: 50%;          
-            top: 20px;
-        }
+.title {
+    position: relative;
+    height: 80px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    -webkit-transform-style: preserve-3d;
+    width: 650px;
+    //left: 496px;
+    margin-left: 27.6%;
+    margin-right: 50%;          
+    top: 20px;
+}
 
-        .titleImg {
-            height: 80px;
-            width: 650px;
-        }
+.titleImg {
+    height: 80px;
+    width: 650px;
+}

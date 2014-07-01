@@ -1,21 +1,21 @@
-       .footer {
-            text-align: center;
-            bottom: -79%;
-            margin-left: auto;
-            margin-right: 13%;
-            position: relative;
-            background: #5bace9;
-            width: 604px;
-            height: 30px;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
-            
-        }
+.footer {
+    text-align: center;
+    bottom: -79%;
+    margin-left: auto;
+    margin-right: 8%;
+    position: relative;
+    background: #5bace9;
+    width: 700px;
+    height: 30px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
 
-        
-        .footerText {
-            top: 5.5px;
-            position: relative;
-            font-size: 13px;
-            color: #fff;
-        }
-        
+}
+
+
+.footerText {
+    top: 5.5px;
+    position: relative;
+    font-size: 13px;
+    color: #fff;
+}
+

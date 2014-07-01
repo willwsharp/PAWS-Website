@@ -1,44 +1,43 @@
+#servicesPage {
+}
 
-        #servicesPage {
-        }
+#servicesPageTitle {
+    width: 100%;
+    height: 60px;
+    background: #fff;
+}
 
-        #servicesPageTitle {
-            width: 100%;
-            height: 60px;
-            background: #fff;
-        }
-        
-        .servicesImg {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            height: 60px;
-        }
+.servicesImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+}
 
-        #servicesPageBody {
-            display: block;
-            margin-left: 7px;
-            margin-right: auto;
-            position: relative;
-            top: 10px;
-            width: 95%;
-            height: 84%;
-            border: solid 2px;
-            font-size: 22px;
-            padding: 5px 5px 5px 5px;
-            text-align: justify;
-            z-index: -1;
-        }
+#servicesPageBody {
+    display: block;
+    margin-left: 7px;
+    margin-right: auto;
+    position: relative;
+    top: 10px;
+    width: 95%;
+    height: 84%;
+    border: solid 2px;
+    font-size: 22px;
+    padding: 5px 5px 5px 5px;
+    text-align: justify;
+    z-index: -1;
+}
 
-        #servicesList {
-            position: absolute;
-            font-size: 23px;
-            font-weight: bold;
-            top: 40px;
-            margin-left: auto;
-            margin-right: 5px;
-        }
-        
-        #servicesList li{
-            padding-top: 25px;
-        }
+#servicesList {
+    position: absolute;
+    font-size: 23px;
+    font-weight: bold;
+    top: 40px;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+#servicesList li{
+    padding-top: 25px;
+}

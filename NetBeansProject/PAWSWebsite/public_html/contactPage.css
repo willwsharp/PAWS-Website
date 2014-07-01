@@ -1,14 +1,14 @@
-        #contactPageTitle {
-            width: 100%;
-            height: 60px;
-            background: #fff;
-        }
-        
-        .contactPageImg {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            height: 60px;
-        }
+#contactPageTitle {
+    width: 100%;
+    height: 60px;
+    background: #fff;
+}
+
+.contactPageImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+}
 
 

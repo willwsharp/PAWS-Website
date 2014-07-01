@@ -1,31 +1,31 @@
-        .shortBlurb {
-            position: relative;
-            width: 585px;
-            height: 165px;
-            margin-top: 25px;
-            display: block;
-            background: #ececbd;
-            margin-left: auto;
-            margin-right: auto;
-            border:  solid 2px #000;
-        }
-        #homePage {
-            //display: block;
-        }
-        
-        
-        .blurbText {
-            position: relative;
-            text-align: right;
-            font-size: 18px;
-            color: black;
-            left: 10px;
-            top: 20px;
-            margin-top: auto;
-            margin-bottom: 55%;
-        }
-        
-        .initialContent {
-            -webkit-animation: fadeIn forwards 2s;
-            display: block;
-        }
+.shortBlurb {
+    position: relative;
+    width: 585px;
+    height: 165px;
+    margin-top: 25px;
+    display: block;
+    background: #ececbd;
+    margin-left: auto;
+    margin-right: auto;
+    border:  solid 2px #000;
+}
+#homePage {
+    //display: block;
+}
+
+
+.blurbText {
+    position: relative;
+    text-align: right;
+    font-size: 18px;
+    color: black;
+    left: 10px;
+    top: 20px;
+    margin-top: auto;
+    margin-bottom: 55%;
+}
+
+.initialContent {
+    -webkit-animation: fadeIn forwards 2s;
+    display: block;
+}
