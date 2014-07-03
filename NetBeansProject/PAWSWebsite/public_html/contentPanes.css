@@ -26,10 +26,10 @@
     z-index: -1;
 }
 
-.show {
+.contentShow {
     display: block;
 }
 
-.hide {
+.contentHide {
     display: none;
 }

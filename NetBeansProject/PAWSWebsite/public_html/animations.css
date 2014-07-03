@@ -37,11 +37,11 @@
 .rollIn {
     -webkit-animation: rollIn;
     -webkit-animation-fill-mode: forwards;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: .5s;
 }
 
 .rollOut {
     -webkit-animation: rollOut;
     -webkit-animation-fill-mode: forwards;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: .5s;
 }

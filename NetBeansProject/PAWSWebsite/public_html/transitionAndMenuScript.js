@@ -20,39 +20,39 @@ $(document).ready(function() {
         $menuOpt.eq(selectedMenu).addClass('selectedMenu');
 
         if (selectedMenu === 3) {
-            if ($submenu.hasClass('show')) {
-                $pullInImg.addClass('hide');
-                $pullInImg.removeClass('show');
-                $pullOutImg.addClass('show');
-                $pullOutImg.removeClass('hide');
-                $hoverPullOutImg.addClass('show');
-                $hoverPullOutImg.removeClass('hide');
-                $submenu.removeClass('show');
-                $submenu.addClass('hide');
+            if ($submenu.hasClass('contentShow')) {
+                $pullInImg.addClass('contentHide');
+                $pullInImg.removeClass('contentShow');
+                $pullOutImg.addClass('contentShow');
+                $pullOutImg.removeClass('contentHide');
+                $hoverPullOutImg.addClass('contentShow');
+                $hoverPullOutImg.removeClass('contentHide');
+                $submenu.removeClass('contentShow');
+                $submenu.addClass('contentHide');
                 $menuOpt.removeClass('selectedMenu');
                 return;
             }
             else {
-                $pullOutImg.addClass('hide');
-                $pullOutImg.removeClass('show');
-                $hoverPullOutImg.addClass('hide');
-                $hoverPullOutImg.removeClass('show');
-                $pullInImg.removeClass('hide');
-                $pullInImg.addClass('show');
-                $submenu.removeClass('hide');
-                $submenu.addClass('show');
+                $pullOutImg.addClass('contentHide');
+                $pullOutImg.removeClass('contentShow');
+                $hoverPullOutImg.addClass('contentHide');
+                $hoverPullOutImg.removeClass('contentShow');
+                $pullInImg.removeClass('contentHide');
+                $pullInImg.addClass('contentShow');
+                $submenu.removeClass('contentHide');
+                $submenu.addClass('contentShow');
                 return;
             }
         }
         else {
-            $pullInImg.addClass('hide');
-            $pullInImg.removeClass('show');
-            $pullOutImg.addClass('show');
-            $pullOutImg.removeClass('hide');
-            $hoverPullOutImg.addClass('show');
-            $hoverPullOutImg.removeClass('hide');
-            $submenu.removeClass('show');
-            $submenu.addClass('hide');
+            $pullInImg.addClass('contentHide');
+            $pullInImg.removeClass('contentShow');
+            $pullOutImg.addClass('contentShow');
+            $pullOutImg.removeClass('contentHide');
+            $hoverPullOutImg.addClass('contentShow');
+            $hoverPullOutImg.removeClass('contentHide');
+            $submenu.removeClass('contentShow');
+            $submenu.addClass('contentHide');
         }
 
         if (selectedMenu === 6 || selectedMenu === 7) {
@@ -67,24 +67,22 @@ $(document).ready(function() {
         }
 
         $content.removeClass('rollOut');
-        $content.removeClass('hide');
+        $content.removeClass('contentHide');
         $content.eq(prevItem).addClass('rollOut');
-        $content.eq(prevItem).addClass('hide');
-
+        
+        //console.log($content.eq(prevItem).attr("class"));
+        
         $content.eq(prevItem).removeClass('rollIn');
-        $content.eq(prevItem).removeClass('show');
-
-        $content.eq(itemToShow).addClass('show');
-        $content.eq(itemToShow).addClass('rollIn');
-        $content.eq(itemToShow).removeClass('rollOut');
-        $content.eq(itemToShow).removeClass('hide');
-
-        if (removeAttr === 0)
-            $content.removeClass('initialContent');
-        removeAttr = 1;
-
-        prevItem = item;
-
+        console.log('1');
+        $content.eq(prevItem).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+            $content.eq(prevItem).removeClass('contentShow');
+            console.log('2');
+            $content.eq(itemToShow).addClass('contentShow');
+            $content.eq(itemToShow).addClass('rollIn');
+            $content.eq(itemToShow).removeClass('rollOut');
+            prevItem = item;
+        });
+        console.log('3');
     };
 
     var showCurrentSubmenu = function(submenu, item) {
