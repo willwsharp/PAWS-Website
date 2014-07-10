@@ -5,24 +5,10 @@
     top: 150px;
     left: 620px;
     display: none;
-    transition: opacity 1s;
+    //transition: opacity 1s;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
     background: #ececbd;
-    -webkit-transition: opacity 1s;
-    z-index: -1;
-}
-
-.submenuContent {
-    position: relative;
-    width: 604px;
-    height: 567px;
-    top: 150px;
-    left: 620px;
-    display: none;
-    transition: opacity 1s;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
-    background: #ececbd;
-    -webkit-transition: opacity 1s;
+    //-webkit-transition: opacity 1s;
     z-index: -1;
 }
 

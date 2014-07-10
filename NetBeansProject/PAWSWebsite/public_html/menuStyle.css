@@ -71,7 +71,7 @@
 
 #submenu li a.selectedSubmenu {
     background-color: #5bace9;
-    color: #ececbd;
+    color: #fff;
 }
 
 #submenu li a {
@@ -107,6 +107,13 @@
     z-index: -1;
 }
 
+#invertPullOutImg{
+    position: absolute;
+    float: right;
+    bottom: 97px;
+    right: 5px;
+    transition: all 0s;     
+}
 #pullInImg {
     position: absolute;
     float: right;

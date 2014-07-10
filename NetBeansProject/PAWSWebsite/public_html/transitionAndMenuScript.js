@@ -1,63 +1,81 @@
 $(document).ready(function() {
     $menuOpt = $('.menu > li > a');
-    $submenuOpt = $('#submenu li');
+    $submenuOpt = $('#submenu li a');
     $content = $('.contentPanes');
     $submenuContent = $('.submenuContent');
     $bottomLegal = $('.disclaimers a');
     $submenu = $('#submenu');
     $pullOutImg = $('#pullOutImg');
     $hoverPullOutImg = $('#hoverPullOutImg');
+    $invertPullOutImg = $('#invertPullOutImg');
     $pullInImg = $('#pullInImg');
 
+    var prevMenu = 0;
     var prevItem = 0;
-    var removeAttr = 0;
+    var prevSubItem = 0;
     var showCurrent = function(menu, item) {
         var itemToShow = item;
         var selectedMenu = menu;
+        //var selectedResourceSubmenu = menu - 8;
         var legalTemp = 0;
-
-        $menuOpt.removeClass('selectedMenu');
-        $menuOpt.eq(selectedMenu).addClass('selectedMenu');
-
+        
+        //$menuOpt.removeClass('selectedMenu');
+        //$menuOpt.eq(selectedMenu).addClass('selectedMenu');
+        changeSelectedMenu(selectedMenu);
+        
         if (selectedMenu === 3) {
-            if ($submenu.hasClass('contentShow')) {
-                $pullInImg.addClass('contentHide');
-                $pullInImg.removeClass('contentShow');
-                $pullOutImg.addClass('contentShow');
-                $pullOutImg.removeClass('contentHide');
-                $hoverPullOutImg.addClass('contentShow');
-                $hoverPullOutImg.removeClass('contentHide');
-                $submenu.removeClass('contentShow');
-                $submenu.addClass('contentHide');
+            if ($submenu.hasClass('show')) {
+                if ($submenuOpt.hasClass('selectedSubmenu')) {
+                    $pullInImg.addClass('hide');
+                    $pullInImg.removeClass('show');
+                    $invertPullOutImg.addClass('show');
+                    $invertPullOutImg.removeClass('hide');
+                    $submenu.removeClass('show');
+                    $submenu.addClass('hide');                    
+                    return;
+                }
+                $invertPullOutImg.addClass('hide');
+                $invertPullOutImg.removeClass('show');
+                $pullInImg.addClass('hide');
+                $pullInImg.removeClass('show');
+                $pullOutImg.addClass('show');
+                $pullOutImg.removeClass('hide');
+                $hoverPullOutImg.addClass('show');
+                $hoverPullOutImg.removeClass('hide');
+                $submenu.removeClass('show');
+                $submenu.addClass('hide');
                 $menuOpt.removeClass('selectedMenu');
+                $menuOpt.eq(prevMenu).addClass('selectedMenu');
                 return;
             }
             else {
-                $pullOutImg.addClass('contentHide');
-                $pullOutImg.removeClass('contentShow');
-                $hoverPullOutImg.addClass('contentHide');
-                $hoverPullOutImg.removeClass('contentShow');
-                $pullInImg.removeClass('contentHide');
-                $pullInImg.addClass('contentShow');
-                $submenu.removeClass('contentHide');
-                $submenu.addClass('contentShow');
+                $pullOutImg.addClass('hide');
+                $pullOutImg.removeClass('show');
+                $hoverPullOutImg.addClass('hide');
+                $hoverPullOutImg.removeClass('show');
+                $pullInImg.removeClass('hide');
+                $pullInImg.addClass('show');
+                $submenu.removeClass('hide');
+                $submenu.addClass('show');
                 return;
             }
         }
-        else {
-            $pullInImg.addClass('contentHide');
-            $pullInImg.removeClass('contentShow');
-            $pullOutImg.addClass('contentShow');
-            $pullOutImg.removeClass('contentHide');
-            $hoverPullOutImg.addClass('contentShow');
-            $hoverPullOutImg.removeClass('contentHide');
-            $submenu.removeClass('contentShow');
-            $submenu.addClass('contentHide');
+        else if (selectedMenu < 8){
+            $invertPullOutImg.addClass('hide');
+            $invertPullOutImg.removeClass('show');            
+            $pullInImg.addClass('hide');
+            $pullInImg.removeClass('show');
+            $pullOutImg.addClass('show');
+            $pullOutImg.removeClass('hide');
+            $hoverPullOutImg.addClass('show');
+            $hoverPullOutImg.removeClass('hide');
+            $submenu.removeClass('show');
+            $submenu.addClass('hide');
+            $submenuOpt.removeClass('selectedSubmenu');
         }
 
         if (selectedMenu === 6 || selectedMenu === 7) {
             legalTemp = selectedMenu - 6;
-            console.log($bottomLegal.eq(legalTemp));
             $bottomLegal.removeClass('selectedLegal');
             $bottomLegal.eq(legalTemp).addClass('selectedLegal');
             $menuOpt.removeClass('selectedMenu');
@@ -65,35 +83,69 @@ $(document).ready(function() {
         else {
             $bottomLegal.removeClass('selectedLegal');
         }
-
+        
+        if(itemToShow === prevItem) return;
         $content.removeClass('rollOut');
         $content.removeClass('contentHide');
         $content.eq(prevItem).addClass('rollOut');
-        
-        //console.log($content.eq(prevItem).attr("class"));
-        
+                
         $content.eq(prevItem).removeClass('rollIn');
-        console.log('1');
+        //TODO - improve the way this works
         $content.eq(prevItem).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
             $content.eq(prevItem).removeClass('contentShow');
-            console.log('2');
             $content.eq(itemToShow).addClass('contentShow');
             $content.eq(itemToShow).addClass('rollIn');
             $content.eq(itemToShow).removeClass('rollOut');
             prevItem = item;
+            prevMenu = menu;
         });
-        console.log('3');
     };
 
+    var changeSelectedMenu = function(menu) {
+        var selectedMenu = menu;
+        
+        if (selectedMenu < 8) {
+            $menuOpt.removeClass('selectedMenu');
+            $menuOpt.eq(selectedMenu).addClass('selectedMenu');
+        }
+        else if (selectedMenu >= 8) {
+            selectedMenu = selectedMenu - 8;
+            $submenuOpt.removeClass('selectedSubmenu');
+            $submenuOpt.eq(selectedMenu).addClass('selectedSubmenu');
+        }
+    };
+    
     var showCurrentSubmenu = function(submenu, item) {
         var itemToShow = item;
         var selectedSubmenu = submenu;
         
-        console.log($submenuOpt);
+        console.log($submenuContent);
         
         $submenuOpt.removeClass('selectedSubmenu');
         $submenuOpt.eq(selectedSubmenu).addClass('selectedSubmenu');
-
+        
+        //if(itemToShow === prevSubItem) return;
+        $content.removeClass('rollOut');
+        $content.removeClass('contentShow');
+        $content.eq(prevItem).addClass('rollOut');
+        
+        $submenuContent.removeClass('rollOut');
+        $submenuContent.removeClass('contentHide');
+        $submenuContent.eq(prevSubItem).addClass('rollOut');
+        
+        $submenuContent.eq(prevSubItem).removeClass('rollIn');
+        //console.log('1');
+        //console.log($submenuContent.eq(prevSubItem));
+        //$submenuContent.eq(prevSubItem).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+            $submenuContent.eq(prevSubItem).removeClass('contentShow');
+            $submenuContent.eq(itemToShow).addClass('contentShow');
+            $submenuContent.eq(itemToShow).addClass('rollIn');
+            $submenuContent.eq(itemToShow).removeClass('rollOut');
+            prevSubItem = item;
+            //console.log($submenuContent.eq(itemToShow));
+            //prevMenu = submenu;
+        //});
+        //console.log('3');
     };
 
     $('#HomeButton').on('click', function() {
@@ -128,30 +180,31 @@ $(document).ready(function() {
     });
 
     $('#generalButton').on('click', function() {
-        showCurrentSubmenu(0, 0);
+        //showCurrent(0, 0);
+        showCurrent(8, 8);
     });
 
     $('#estatePlButton').on('click', function() {
-        showCurrentSubmenu(1, 1);
+        showCurrent(9, 9);
     });
 
     $('#probateButton').on('click', function() {
-        showCurrentSubmenu(2, 2);
+        showCurrent(10, 10);
     });
 
     $('#guardButton').on('click', function() {
-        showCurrentSubmenu(3, 3);
+        showCurrent(11, 11);
     });
 
     $('#businessButton').on('click', function() {
-        showCurrentSubmenu(4, 4);
+        showCurrent(12, 12);
     });
 
     $('#realEstateButton').on('click', function() {
-        showCurrentSubmenu(5, 5);
+        showCurrent(13, 13);
     });
 
     $('#appsButton').on('click', function() {
-        showCurrentSubmenu(6, 6);
+        showCurrent(14, 14);
     });
 });
