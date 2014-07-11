@@ -18,11 +18,9 @@ $(document).ready(function() {
         var selectedMenu = menu;
         //var selectedResourceSubmenu = menu - 8;
         var legalTemp = 0;
-        
-        //$menuOpt.removeClass('selectedMenu');
-        //$menuOpt.eq(selectedMenu).addClass('selectedMenu');
+
         changeSelectedMenu(selectedMenu);
-        
+
         if (selectedMenu === 3) {
             if ($submenu.hasClass('show')) {
                 if ($submenuOpt.hasClass('selectedSubmenu')) {
@@ -31,7 +29,7 @@ $(document).ready(function() {
                     $invertPullOutImg.addClass('show');
                     $invertPullOutImg.removeClass('hide');
                     $submenu.removeClass('show');
-                    $submenu.addClass('hide');                    
+                    $submenu.addClass('hide');
                     return;
                 }
                 $invertPullOutImg.addClass('hide');
@@ -60,9 +58,9 @@ $(document).ready(function() {
                 return;
             }
         }
-        else if (selectedMenu < 8){
+        else if (selectedMenu < 8) {
             $invertPullOutImg.addClass('hide');
-            $invertPullOutImg.removeClass('show');            
+            $invertPullOutImg.removeClass('show');
             $pullInImg.addClass('hide');
             $pullInImg.removeClass('show');
             $pullOutImg.addClass('show');
@@ -72,6 +70,14 @@ $(document).ready(function() {
             $submenu.removeClass('show');
             $submenu.addClass('hide');
             $submenuOpt.removeClass('selectedSubmenu');
+        }
+        else if (selectedMenu >= 8) {
+            $pullInImg.addClass('hide');
+            $pullInImg.removeClass('show');
+            $invertPullOutImg.addClass('show');
+            $invertPullOutImg.removeClass('hide');
+            $submenu.removeClass('show');
+            $submenu.addClass('hide');
         }
 
         if (selectedMenu === 6 || selectedMenu === 7) {
@@ -83,12 +89,13 @@ $(document).ready(function() {
         else {
             $bottomLegal.removeClass('selectedLegal');
         }
-        
-        if(itemToShow === prevItem) return;
+
+        if (itemToShow === prevItem)
+            return;
         $content.removeClass('rollOut');
         $content.removeClass('contentHide');
         $content.eq(prevItem).addClass('rollOut');
-                
+
         $content.eq(prevItem).removeClass('rollIn');
         //TODO - improve the way this works
         $content.eq(prevItem).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
@@ -103,7 +110,7 @@ $(document).ready(function() {
 
     var changeSelectedMenu = function(menu) {
         var selectedMenu = menu;
-        
+
         if (selectedMenu < 8) {
             $menuOpt.removeClass('selectedMenu');
             $menuOpt.eq(selectedMenu).addClass('selectedMenu');
@@ -113,39 +120,6 @@ $(document).ready(function() {
             $submenuOpt.removeClass('selectedSubmenu');
             $submenuOpt.eq(selectedMenu).addClass('selectedSubmenu');
         }
-    };
-    
-    var showCurrentSubmenu = function(submenu, item) {
-        var itemToShow = item;
-        var selectedSubmenu = submenu;
-        
-        console.log($submenuContent);
-        
-        $submenuOpt.removeClass('selectedSubmenu');
-        $submenuOpt.eq(selectedSubmenu).addClass('selectedSubmenu');
-        
-        //if(itemToShow === prevSubItem) return;
-        $content.removeClass('rollOut');
-        $content.removeClass('contentShow');
-        $content.eq(prevItem).addClass('rollOut');
-        
-        $submenuContent.removeClass('rollOut');
-        $submenuContent.removeClass('contentHide');
-        $submenuContent.eq(prevSubItem).addClass('rollOut');
-        
-        $submenuContent.eq(prevSubItem).removeClass('rollIn');
-        //console.log('1');
-        //console.log($submenuContent.eq(prevSubItem));
-        //$submenuContent.eq(prevSubItem).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
-            $submenuContent.eq(prevSubItem).removeClass('contentShow');
-            $submenuContent.eq(itemToShow).addClass('contentShow');
-            $submenuContent.eq(itemToShow).addClass('rollIn');
-            $submenuContent.eq(itemToShow).removeClass('rollOut');
-            prevSubItem = item;
-            //console.log($submenuContent.eq(itemToShow));
-            //prevMenu = submenu;
-        //});
-        //console.log('3');
     };
 
     $('#HomeButton').on('click', function() {

@@ -1,21 +1,22 @@
-#generalResources {
+//TODO Make sure mobile devices are taken to actual store!
+#apps {
     
 }
 
-#resGenPageTitle {
+#resAppsPageTitle {
     width: 100%;
     height: 60px;
     background: #fff;
 }
 
-#resGenPageTitleImg {
+#resAppsPageTitleImg {
     display: block;
     height: 60px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#resGenPageBody {
+#resAppsPageBody {
     display: block;
     margin-left: 7px;
     margin-right: auto;
@@ -30,22 +31,18 @@
     z-index: -1;            
 }
 
-.resGenLinkList {
+.resAppLinkList {
     list-style: none;
 }
 
-.resGenLinkList li {
+.resAppLinkList li {
     margin-top: 15px;
 }
 
-.resGenLinkList li a {
+.resAppLinkList li a {
     color: #5bace9;
 }
 
-.resGenLinkList li a:hover {
+.resAppLinkList li a:hover {
     color: black;
-}
-
-.resGenLinkList li a:visited {
-    //color: black;
 }

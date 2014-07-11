@@ -1,21 +1,21 @@
-#generalResources {
-    
+#estatePlanning {
+
 }
 
-#resGenPageTitle {
+#resEstPlanPageTitle {
     width: 100%;
     height: 60px;
     background: #fff;
 }
 
-#resGenPageTitleImg {
+#resEstPlanPageTitleImg {
     display: block;
     height: 60px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#resGenPageBody {
+#resEstPlanPageBody {
     display: block;
     margin-left: 7px;
     margin-right: auto;
@@ -30,22 +30,14 @@
     z-index: -1;            
 }
 
-.resGenLinkList {
+.resEstPlanLinkList {
     list-style: none;
 }
 
-.resGenLinkList li {
-    margin-top: 15px;
+.resEstPlanLinkList li {
+    margin-top: 70px;
 }
 
-.resGenLinkList li a {
+.resEstPlanLinkList li a {
     color: #5bace9;
-}
-
-.resGenLinkList li a:hover {
-    color: black;
-}
-
-.resGenLinkList li a:visited {
-    //color: black;
 }

@@ -1,21 +1,21 @@
-#generalResources {
-    
+#probate {
+
 }
 
-#resGenPageTitle {
+#resProbatePageTitle {
     width: 100%;
     height: 60px;
     background: #fff;
 }
 
-#resGenPageTitleImg {
+#resProbatePageTitleImg {
     display: block;
     height: 60px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#resGenPageBody {
+#resProbatePageBody {
     display: block;
     margin-left: 7px;
     margin-right: auto;
@@ -30,22 +30,14 @@
     z-index: -1;            
 }
 
-.resGenLinkList {
+.resProbateLinkList {
     list-style: none;
 }
 
-.resGenLinkList li {
-    margin-top: 15px;
+.resProbateLinkList li {
+    margin-top: 29px;
 }
 
-.resGenLinkList li a {
+.resProbateLinkList li a {
     color: #5bace9;
-}
-
-.resGenLinkList li a:hover {
-    color: black;
-}
-
-.resGenLinkList li a:visited {
-    //color: black;
 }
