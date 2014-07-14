@@ -1,14 +1,32 @@
+//TODO Make sure mobile devices are taken to actual store!
+#contactPage {
+    
+}
+
 #contactPageTitle {
     width: 100%;
     height: 60px;
     background: #fff;
 }
 
-.contactPageImg {
+#contactPageImg {
     display: block;
+    height: 60px;
     margin-left: auto;
     margin-right: auto;
-    height: 60px;
 }
 
-
+#contactPageBody {
+    display: block;
+    margin-left: 7px;
+    margin-right: auto;
+    position: relative;
+    top: 10px;
+    width: 95%;
+    height: 84%;
+    border: solid 2px;
+    font-size: 20px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    z-index: -1;            
+}
