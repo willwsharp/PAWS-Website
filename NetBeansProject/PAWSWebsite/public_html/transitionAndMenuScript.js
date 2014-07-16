@@ -1,14 +1,21 @@
 $(document).ready(function() {
     $menuOpt = $('.menu > li > a');
     $submenuOpt = $('#submenu li a');
+    $aboutSubmenuOpt = $('#aboutSubmenu li a');
     $content = $('.contentPanes');
     $submenuContent = $('.submenuContent');
     $bottomLegal = $('.disclaimers a');
     $submenu = $('#submenu');
+    $aboutSubmenu = $('#aboutSubmenu');
     $pullOutImg = $('#pullOutImg');
     $hoverPullOutImg = $('#hoverPullOutImg');
     $invertPullOutImg = $('#invertPullOutImg');
     $pullInImg = $('#pullInImg');
+    $aboutPullOutImg = $('#aboutPullOutImg');
+    $aboutHoverPullOutImg = $('#aboutHoverPullOutImg');
+    $aboutInvertPullOutImg = $('#aboutInvertPullOutImg');
+    $aboutPullInImg = $('#aboutPullInImg');
+
 
     var prevMenu = 0;
     var prevItem = 0;
@@ -20,43 +27,8 @@ $(document).ready(function() {
         var legalTemp = 0;
 
         changeSelectedMenu(selectedMenu);
-
         if (selectedMenu === 3) {
-            if ($submenu.hasClass('show')) {
-                if ($submenuOpt.hasClass('selectedSubmenu')) {
-                    $pullInImg.addClass('hide');
-                    $pullInImg.removeClass('show');
-                    $invertPullOutImg.addClass('show');
-                    $invertPullOutImg.removeClass('hide');
-                    $submenu.removeClass('show');
-                    $submenu.addClass('hide');
-                    return;
-                }
-                $invertPullOutImg.addClass('hide');
-                $invertPullOutImg.removeClass('show');
-                $pullInImg.addClass('hide');
-                $pullInImg.removeClass('show');
-                $pullOutImg.addClass('show');
-                $pullOutImg.removeClass('hide');
-                $hoverPullOutImg.addClass('show');
-                $hoverPullOutImg.removeClass('hide');
-                $submenu.removeClass('show');
-                $submenu.addClass('hide');
-                $menuOpt.removeClass('selectedMenu');
-                $menuOpt.eq(prevMenu).addClass('selectedMenu');
-                return;
-            }
-            else {
-                $pullOutImg.addClass('hide');
-                $pullOutImg.removeClass('show');
-                $hoverPullOutImg.addClass('hide');
-                $hoverPullOutImg.removeClass('show');
-                $pullInImg.removeClass('hide');
-                $pullInImg.addClass('show');
-                $submenu.removeClass('hide');
-                $submenu.addClass('show');
-                return;
-            }
+            resourceSubmenuFunctions();
         }
         else if (selectedMenu < 8) {
             $invertPullOutImg.addClass('hide');
@@ -115,13 +87,57 @@ $(document).ready(function() {
             $menuOpt.removeClass('selectedMenu');
             $menuOpt.eq(selectedMenu).addClass('selectedMenu');
         }
-        else if (selectedMenu >= 8) {
+        else if (selectedMenu >= 8 && selectedMenu < 15) {
             selectedMenu = selectedMenu - 8;
             $submenuOpt.removeClass('selectedSubmenu');
             $submenuOpt.eq(selectedMenu).addClass('selectedSubmenu');
         }
+        else if (selectedMenu >= 15) {
+            selectedMenu = selectedMenu - 15;
+            $aboutSubmenuOpt.removeClass('selectedSubmeu');
+            $aboutSubmenuOpt.eq(selectedMenu).addClass('selectedSubmenu');
+        }
+
     };
 
+
+    var resourceSubmenuFunctions = function() {
+        if ($submenu.hasClass('show')) {
+            if ($submenuOpt.hasClass('selectedSubmenu')) {
+                $pullInImg.addClass('hide');
+                $pullInImg.removeClass('show');
+                $invertPullOutImg.addClass('show');
+                $invertPullOutImg.removeClass('hide');
+                $submenu.removeClass('show');
+                $submenu.addClass('hide');
+                return;
+            }
+            $invertPullOutImg.addClass('hide');
+            $invertPullOutImg.removeClass('show');
+            $pullInImg.addClass('hide');
+            $pullInImg.removeClass('show');
+            $pullOutImg.addClass('show');
+            $pullOutImg.removeClass('hide');
+            $hoverPullOutImg.addClass('show');
+            $hoverPullOutImg.removeClass('hide');
+            $submenu.removeClass('show');
+            $submenu.addClass('hide');
+            $menuOpt.removeClass('selectedMenu');
+            $menuOpt.eq(prevMenu).addClass('selectedMenu');
+            return;
+        }
+        else {
+            $pullOutImg.addClass('hide');
+            $pullOutImg.removeClass('show');
+            $hoverPullOutImg.addClass('hide');
+            $hoverPullOutImg.removeClass('show');
+            $pullInImg.removeClass('hide');
+            $pullInImg.addClass('show');
+            $submenu.removeClass('hide');
+            $submenu.addClass('show');
+            return;
+        }
+    }
     $('#HomeButton').on('click', function() {
         showCurrent(0, 0);
     });
@@ -180,5 +196,11 @@ $(document).ready(function() {
 
     $('#appsButton').on('click', function() {
         showCurrent(14, 14);
+    });
+    $('#bioButton').on('click', function() {
+        showCurrent(15, 15);
+    });
+    $('#accoaButton').on('click', function() {
+        showCurrent(16, 16);
     });
 });

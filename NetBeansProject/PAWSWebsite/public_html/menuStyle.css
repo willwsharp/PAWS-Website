@@ -89,6 +89,38 @@
     color: #fff;
 }
 
+#aboutSubmenu li a.selectedSubmenu {
+    background: #5bace9;
+    color: #fff;
+}
+
+#aboutSubmenu {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;            
+    background: white;
+    position: absolute;
+    left: 181px;
+    top: 41.8px;
+    list-style: none;
+    margin: 0px 0px 3em;
+    padding: 0px;
+    overflow: hidden;
+    width: 115px;
+}
+
+#aboutSubmenu li a {
+    position: relative;
+    text-align: center;
+    background: white;
+    font-size: 12px;
+    border: 1px solid rgb(204, 204, 204); 
+    //height: 19.4px;
+    transition: all 0s;
+}
+
+#aboutSubmenu li a:hover {
+    background: #5bace9;
+    color: #fff;
+}
 
 #pullOutImg {
     position: absolute;
@@ -122,7 +154,46 @@
     transition: all 0s;            
 }
 
+
+
+#aboutPullOutImg {
+    position: absolute;
+    float: right;
+    bottom: 182px;
+    right: 5px;
+    transition: all 0s;
+}
+
+#aboutHoverPullOutImg {
+    position: absolute;
+    float: right;
+    bottom: 182px;
+    right: 5px;
+    transition: all 0s;
+    z-index: -1;
+}
+
+#aboutInvertPullOutImg{
+    position: absolute;
+    float: right;
+    bottom: 182px;
+    right: 5px;
+    transition: all 0s;     
+}
+#aboutPullInImg {
+    position: absolute;
+    float: right;
+    bottom: 182px;
+    right: 5px;
+    transition: all 0s;            
+}
+
+
 .menu li a:hover > #hoverPullOutImg {
+    z-index: 0;
+}
+
+.menu li a:hover > #aboutHoverPullOutImg {
     z-index: 0;
 }
 
