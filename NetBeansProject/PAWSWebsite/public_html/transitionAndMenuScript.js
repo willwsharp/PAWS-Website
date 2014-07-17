@@ -29,21 +29,19 @@ $(document).ready(function() {
         changeSelectedMenu(selectedMenu);
         if (selectedMenu === 3) {
             resourceSubmenuFunctions();
+            return;
+        }
+        else if (selectedMenu === 1) {
+            aboutSubmenuFunctions();
+            return;
         }
         else if (selectedMenu < 8) {
-            $invertPullOutImg.addClass('hide');
-            $invertPullOutImg.removeClass('show');
-            $pullInImg.addClass('hide');
-            $pullInImg.removeClass('show');
-            $pullOutImg.addClass('show');
-            $pullOutImg.removeClass('hide');
-            $hoverPullOutImg.addClass('show');
-            $hoverPullOutImg.removeClass('hide');
-            $submenu.removeClass('show');
-            $submenu.addClass('hide');
             $submenuOpt.removeClass('selectedSubmenu');
+            $aboutSubmenuOpt.removeClass('selectedSubmen');
+            hideSubmenus();
+            changeSelectedMenu(selectedMenu);
         }
-        else if (selectedMenu >= 8) {
+        else if (selectedMenu >= 8 && selectedMenu < 15) {
             $pullInImg.addClass('hide');
             $pullInImg.removeClass('show');
             $invertPullOutImg.addClass('show');
@@ -100,7 +98,6 @@ $(document).ready(function() {
 
     };
 
-
     var resourceSubmenuFunctions = function() {
         if ($submenu.hasClass('show')) {
             if ($submenuOpt.hasClass('selectedSubmenu')) {
@@ -110,21 +107,12 @@ $(document).ready(function() {
                 $invertPullOutImg.removeClass('hide');
                 $submenu.removeClass('show');
                 $submenu.addClass('hide');
-                return;
             }
-            $invertPullOutImg.addClass('hide');
-            $invertPullOutImg.removeClass('show');
-            $pullInImg.addClass('hide');
-            $pullInImg.removeClass('show');
-            $pullOutImg.addClass('show');
-            $pullOutImg.removeClass('hide');
-            $hoverPullOutImg.addClass('show');
-            $hoverPullOutImg.removeClass('hide');
-            $submenu.removeClass('show');
-            $submenu.addClass('hide');
-            $menuOpt.removeClass('selectedMenu');
-            $menuOpt.eq(prevMenu).addClass('selectedMenu');
-            return;
+            else {
+                hideSubmenus();
+                //$menuOpt.removeClass('selectedMenu');
+                //$menuOpt.eq(prevMenu).addClass('selectedMenu');
+            }
         }
         else {
             $pullOutImg.addClass('hide');
@@ -135,9 +123,42 @@ $(document).ready(function() {
             $pullInImg.addClass('show');
             $submenu.removeClass('hide');
             $submenu.addClass('show');
-            return;
         }
-    }
+    };
+
+    var hideSubmenus = function() {
+        resourceSubmenuHide();
+        aboutSubmenuHide();
+        $menuOpt.removeClass('selectedMenu');
+        $menuOpt.eq(prevMenu).addClass('selectedMenu');
+    };
+
+    var resourceSubmenuHide = function() {
+        $invertPullOutImg.addClass('hide');
+        $invertPullOutImg.removeClass('show');
+        $pullInImg.addClass('hide');
+        $pullInImg.removeClass('show');
+        $pullOutImg.addClass('show');
+        $pullOutImg.removeClass('hide');
+        $hoverPullOutImg.addClass('show');
+        $hoverPullOutImg.removeClass('hide');
+        $submenu.removeClass('show');
+        $submenu.addClass('hide');
+    };
+
+    var aboutSubmenuHide = function() {
+        $aboutInvertPullOutImg.addClass('hide');
+        $aboutInvertPullOutImg.removeClass('show');
+        $aboutPullInImg.addClass('hide');
+        $aboutPullInImg.removeClass('show');
+        $aboutPullOutImg.addClass('show');
+        $aboutPullOutImg.removeClass('hide');
+        $aboutHoverPullOutImg.addClass('show');
+        $aboutHoverPullOutImg.removeClass('hide');
+        $aboutSubmenu.removeClass('show');
+        $aboutSubmenu.addClass('hide');
+    };
+
     $('#HomeButton').on('click', function() {
         showCurrent(0, 0);
     });
@@ -197,9 +218,11 @@ $(document).ready(function() {
     $('#appsButton').on('click', function() {
         showCurrent(14, 14);
     });
+
     $('#bioButton').on('click', function() {
         showCurrent(15, 15);
     });
+
     $('#accoaButton').on('click', function() {
         showCurrent(16, 16);
     });
