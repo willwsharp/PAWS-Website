@@ -28,10 +28,12 @@ $(document).ready(function() {
 
         changeSelectedMenu(selectedMenu);
         if (selectedMenu === 3) {
+            aboutSubmenuHide();
             resourceSubmenuFunctions();
             return;
         }
         else if (selectedMenu === 1) {
+            resourceSubmenuHide();
             aboutSubmenuFunctions();
             return;
         }
@@ -48,6 +50,14 @@ $(document).ready(function() {
             $invertPullOutImg.removeClass('hide');
             $submenu.removeClass('show');
             $submenu.addClass('hide');
+        }
+        else if (selectedMenu > 14) {
+            $aboutPullInImg.addClass('hide');
+            $aboutPullInImg.removeClass('show');
+            $aboutInvertPullOutImg.addClass('show');
+            $aboutInvertPullOutImg.removeClass('hide');
+            $aboutSubmenu.removeClass('show');
+            $aboutSubmenu.addClass('hide');
         }
 
         if (selectedMenu === 6 || selectedMenu === 7) {
@@ -110,8 +120,6 @@ $(document).ready(function() {
             }
             else {
                 hideSubmenus();
-                //$menuOpt.removeClass('selectedMenu');
-                //$menuOpt.eq(prevMenu).addClass('selectedMenu');
             }
         }
         else {
@@ -123,6 +131,32 @@ $(document).ready(function() {
             $pullInImg.addClass('show');
             $submenu.removeClass('hide');
             $submenu.addClass('show');
+        }
+    };
+
+    var aboutSubmenuFunctions = function() {
+        if ($aboutSubmenu.hasClass('show')) {
+            if ($aboutSubmenuOpt.hasClass('selectedSubmenu')) {
+                $aboutPullInImg.addClass('hide');
+                $aboutPullInImg.removeClass('show');
+                $aboutInvertPullOutImg.addClass('show');
+                $aboutInvertPullOutImg.removeClass('hide');
+                $aboutSubmenu.removeClass('show');
+                $aboutSubmenu.addClass('hide');
+            }
+            else {
+                hideSubmenus();
+            }
+        }
+        else {
+            $aboutPullOutImg.addClass('hide');
+            $aboutPullOutImg.removeClass('show');
+            $aboutHoverPullOutImg.addClass('hide');
+            $aboutHoverPullOutImg.removeClass('show');
+            $aboutPullInImg.removeClass('hide');
+            $aboutPullInImg.addClass('show');
+            $aboutSubmenu.removeClass('hide');
+            $aboutSubmenu.addClass('show');
         }
     };
 
