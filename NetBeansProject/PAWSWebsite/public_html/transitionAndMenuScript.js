@@ -19,27 +19,27 @@ $(document).ready(function() {
 
     var prevMenu = 0;
     var prevItem = 0;
-    var prevSubItem = 0;
     var showCurrent = function(menu, item) {
         var itemToShow = item;
         var selectedMenu = menu;
         //var selectedResourceSubmenu = menu - 8;
         var legalTemp = 0;
 
+        console.log(selectedMenu);
         changeSelectedMenu(selectedMenu);
-        if (selectedMenu === 3) {
-            aboutSubmenuHide();
-            resourceSubmenuFunctions();
-            return;
-        }
-        else if (selectedMenu === 1) {
+        if (selectedMenu === 1) {
             resourceSubmenuHide();
             aboutSubmenuFunctions();
             return;
         }
+        else if (selectedMenu === 3) {
+            aboutSubmenuHide();
+            resourceSubmenuFunctions();
+            return;
+        }
         else if (selectedMenu < 8) {
             $submenuOpt.removeClass('selectedSubmenu');
-            $aboutSubmenuOpt.removeClass('selectedSubmen');
+            $aboutSubmenuOpt.removeClass('selectedSubmenu');
             hideSubmenus();
             changeSelectedMenu(selectedMenu);
         }
@@ -100,9 +100,9 @@ $(document).ready(function() {
             $submenuOpt.removeClass('selectedSubmenu');
             $submenuOpt.eq(selectedMenu).addClass('selectedSubmenu');
         }
-        else if (selectedMenu >= 15) {
+        else if (selectedMenu > 14) {
             selectedMenu = selectedMenu - 15;
-            $aboutSubmenuOpt.removeClass('selectedSubmeu');
+            $aboutSubmenuOpt.removeClass('selectedSubmenu');
             $aboutSubmenuOpt.eq(selectedMenu).addClass('selectedSubmenu');
         }
 
@@ -161,8 +161,16 @@ $(document).ready(function() {
     };
 
     var hideSubmenus = function() {
+        var primaryMenu;
         resourceSubmenuHide();
         aboutSubmenuHide();
+        if (prevMenu >= 8 && prevMenu < 15) {
+            primaryMenu = 3;
+            $menuOpt.removeClass('selectedMenu');
+            $menuOpt.eq(primaryMenu).addClass('selectedMenu');
+            $submenuOpt.eq(prevMenu).removeClass('selectedSubmenu');
+            $submenuOpt.eq(prevMenu).addClass('selectedSubmenu');
+        }
         $menuOpt.removeClass('selectedMenu');
         $menuOpt.eq(prevMenu).addClass('selectedMenu');
     };

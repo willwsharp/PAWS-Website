@@ -37,32 +37,29 @@
     z-index: -1;
 }
 
-#additionalGroupInfo {
+#accoaDiv {
     display: block;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    border-radius: 2px;
     position: absolute;
-    bottom: 20px;
-    left: 300px;
-    width: 280px;
-    background: white;
+    background: none;
+    bottom: 40px;
+    margin-right: auto;
+    margin-left: 100px;
+    width: 400px;
     text-align: center;
     z-index: 1;         
 }
 
-#additionalGroupLink {
+#accoaLink {
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     text-decoration: none;
     color: #5bace9;
 }
 
-#additionalGroupInfo:hover {
-    color: white;
-    background: #5bace9;
+#accoaDiv:hover {
+    color: black;
 }
 
-#additionalGroupLink:hover {
-    color: white;
-    background: #5bace9;
+#accoaLink:hover {
+    color: black;
 }

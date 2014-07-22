@@ -34,4 +34,30 @@
     font-weight: bold;           
 }
 
+#moreInfoDiv {
+    display: block;
+    position: absolute;
+    background: none;
+    bottom: 25px;
+    margin-right: auto;
+    margin-left: 100px;
+    width: 450px;
+    text-align: center;
+    z-index: 1;         
+}
+
+#moreInfoLink {
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+    color: #5bace9;
+}
+
+#moreInfoDiv:hover {
+    color: black;
+}
+
+#moreInfoLink:hover {
+    color: black;
+}
 
