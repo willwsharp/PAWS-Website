@@ -19,6 +19,7 @@ $(document).ready(function() {
 
     var prevMenu = 0;
     var prevItem = 0;
+    //var selectedMenu = 0;
     var showCurrent = function(menu, item) {
         var itemToShow = item;
         var selectedMenu = menu;
@@ -26,14 +27,14 @@ $(document).ready(function() {
         var legalTemp = 0;
 
         console.log(selectedMenu);
-        changeSelectedMenu(selectedMenu);
+        changeSelectedMenu(menu);
         if (selectedMenu === 1) {
-            resourceSubmenuHide();
+            resSubmenuClassHide();
             aboutSubmenuFunctions();
             return;
         }
         else if (selectedMenu === 3) {
-            aboutSubmenuHide();
+            aboutSubmenuClassHide();
             resourceSubmenuFunctions();
             return;
         }
@@ -41,23 +42,17 @@ $(document).ready(function() {
             $submenuOpt.removeClass('selectedSubmenu');
             $aboutSubmenuOpt.removeClass('selectedSubmenu');
             hideSubmenus();
-            changeSelectedMenu(selectedMenu);
+            changeSelectedMenu(menu);
         }
         else if (selectedMenu >= 8 && selectedMenu < 15) {
-            $pullInImg.addClass('hide');
-            $pullInImg.removeClass('show');
-            $invertPullOutImg.addClass('show');
-            $invertPullOutImg.removeClass('hide');
-            $submenu.removeClass('show');
-            $submenu.addClass('hide');
+            resBlueOutHide();
+            resWhiteOutShow();
+            resSubmenuClassHide();
         }
-        else if (selectedMenu > 14) {
-            $aboutPullInImg.addClass('hide');
-            $aboutPullInImg.removeClass('show');
-            $aboutInvertPullOutImg.addClass('show');
-            $aboutInvertPullOutImg.removeClass('hide');
-            $aboutSubmenu.removeClass('show');
-            $aboutSubmenu.addClass('hide');
+        else if (selectedMenu >= 15) {
+            aboutWhiteInHide();
+            aboutWhiteOutShow();
+            aboutSubmenuClassHide();
         }
 
         if (selectedMenu === 6 || selectedMenu === 7) {
@@ -88,9 +83,7 @@ $(document).ready(function() {
         });
     };
 
-    var changeSelectedMenu = function(menu) {
-        var selectedMenu = menu;
-
+    var changeSelectedMenu = function(selectedMenu) {
         if (selectedMenu < 8) {
             $menuOpt.removeClass('selectedMenu');
             $menuOpt.eq(selectedMenu).addClass('selectedMenu');
@@ -105,100 +98,210 @@ $(document).ready(function() {
             $aboutSubmenuOpt.removeClass('selectedSubmenu');
             $aboutSubmenuOpt.eq(selectedMenu).addClass('selectedSubmenu');
         }
-
     };
 
     var resourceSubmenuFunctions = function() {
         if ($submenu.hasClass('show')) {
             if ($submenuOpt.hasClass('selectedSubmenu')) {
-                $pullInImg.addClass('hide');
-                $pullInImg.removeClass('show');
-                $invertPullOutImg.addClass('show');
-                $invertPullOutImg.removeClass('hide');
-                $submenu.removeClass('show');
-                $submenu.addClass('hide');
+                resBlueOutHide();
+                resWhiteInHide();
+                resWhiteOutShow();
+                resSubmenuClassHide();
             }
             else {
-                hideSubmenus();
+                resourceSubmenuHide_Selected();
             }
         }
         else {
-            $pullOutImg.addClass('hide');
-            $pullOutImg.removeClass('show');
-            $hoverPullOutImg.addClass('hide');
-            $hoverPullOutImg.removeClass('show');
-            $pullInImg.removeClass('hide');
-            $pullInImg.addClass('show');
-            $submenu.removeClass('hide');
-            $submenu.addClass('show');
+            resourceSubmenuShow();
         }
     };
 
     var aboutSubmenuFunctions = function() {
         if ($aboutSubmenu.hasClass('show')) {
             if ($aboutSubmenuOpt.hasClass('selectedSubmenu')) {
-                $aboutPullInImg.addClass('hide');
-                $aboutPullInImg.removeClass('show');
-                $aboutInvertPullOutImg.addClass('show');
-                $aboutInvertPullOutImg.removeClass('hide');
-                $aboutSubmenu.removeClass('show');
-                $aboutSubmenu.addClass('hide');
+                aboutBlueOutHide();
+                aboutWhiteInHide();
+                aboutWhiteOutShow();
+                aboutSubmenuClassHide();
             }
             else {
-                hideSubmenus();
+                aboutSubmenuHide_Selected();
             }
         }
         else {
-            $aboutPullOutImg.addClass('hide');
-            $aboutPullOutImg.removeClass('show');
-            $aboutHoverPullOutImg.addClass('hide');
-            $aboutHoverPullOutImg.removeClass('show');
-            $aboutPullInImg.removeClass('hide');
-            $aboutPullInImg.addClass('show');
-            $aboutSubmenu.removeClass('hide');
-            $aboutSubmenu.addClass('show');
+            aboutSubmenuShow();
         }
     };
 
     var hideSubmenus = function() {
-        var primaryMenu;
-        resourceSubmenuHide();
+        if ($submenu.hasClass('show'))
+            resourceSubmenuHide();
+        if ($aboutSubmenu.hasClass('show'))
+            resourceSubmenuHide();
         aboutSubmenuHide();
-        if (prevMenu >= 8 && prevMenu < 15) {
+    };
+
+    var interMenuFunctions = function() {
+        var primaryMenu;
+        console.log("prevMenu: " + prevMenu);
+        console.log("selectedMenu: " + selectedMenu);
+        if (selectedMenu === 3 || (prevMenu >= 8 && prevMenu < 15)) {
             primaryMenu = 3;
+            changeSelectedMenu(primaryMenu);
+            resourceSubmenuShow();
+            /*$menuOpt.removeClass('selectedMenu');
+             $menuOpt.eq(primaryMenu).addClass('selectedMenu');
+             $submenuOpt.eq(prevMenu).removeClass('selectedSubmenu');
+             $submenuOpt.eq(prevMenu).addClass('selectedSubmenu');
+             $invertPullOutImg.removeClass('hide');
+             $invertPullOutImg.addClass('show');
+             $aboutSubmenuOpt.removeClass('selectedSubmenu');*/
+
+        }
+        else if (selectedMenu === 1 || prevMenu > 14) {
+            primaryMenu = 1;
             $menuOpt.removeClass('selectedMenu');
             $menuOpt.eq(primaryMenu).addClass('selectedMenu');
-            $submenuOpt.eq(prevMenu).removeClass('selectedSubmenu');
-            $submenuOpt.eq(prevMenu).addClass('selectedSubmenu');
+            $aboutSubmenuOpt.eq(prevMenu).removeClass('selectedSubmenu');
+            $aboutSubmenuOpt.eq(prevMenu).addClass('selectedSubmenu');
+            resWhiteOutShow();
+            $submenuOpt.removeClass('selectedSubmenu');
         }
-        $menuOpt.removeClass('selectedMenu');
-        $menuOpt.eq(prevMenu).addClass('selectedMenu');
+        else {
+            $menuOpt.removeClass('selectedMenu');
+            $menuOpt.eq(prevMenu).addClass('selectedMenu');
+        }
+
     };
 
     var resourceSubmenuHide = function() {
-        $invertPullOutImg.addClass('hide');
-        $invertPullOutImg.removeClass('show');
-        $pullInImg.addClass('hide');
-        $pullInImg.removeClass('show');
-        $pullOutImg.addClass('show');
-        $pullOutImg.removeClass('hide');
-        $hoverPullOutImg.addClass('show');
-        $hoverPullOutImg.removeClass('hide');
-        $submenu.removeClass('show');
-        $submenu.addClass('hide');
+        resWhiteOutHide();
+        resWhiteInHide();
+        resBlueOutShow();
+        resHoverShow();
+        resSubmenuClassHide();
+    };
+
+    var resourceSubmenuHide_Selected = function() {
+        resWhiteOutShow();
+        resBlueOutHide();
+        resWhiteInHide();
+        resHoverHide();
+        resSubmenuClassHide();
+    };
+
+    var resourceSubmenuShow = function() {
+        resBlueOutHide();
+        resHoverHide();
+        resWhiteInShow();
+        resSubmenuClassShow();
     };
 
     var aboutSubmenuHide = function() {
-        $aboutInvertPullOutImg.addClass('hide');
-        $aboutInvertPullOutImg.removeClass('show');
-        $aboutPullInImg.addClass('hide');
-        $aboutPullInImg.removeClass('show');
-        $aboutPullOutImg.addClass('show');
-        $aboutPullOutImg.removeClass('hide');
-        $aboutHoverPullOutImg.addClass('show');
-        $aboutHoverPullOutImg.removeClass('hide');
+        aboutWhiteOutHide();
+        aboutBlueOutShow();
+        aboutWhiteInHide();
+        aboutHoverShow();
+        aboutSubmenuClassHide();
+    };
+
+    var aboutSubmenuHide_Selected = function() {
+        aboutWhiteOutShow();
+        aboutBlueOutHide();
+        aboutWhiteInHide();
+        aboutHoverHide();
+        aboutSubmenuClassHide();
+    };
+
+    var aboutSubmenuShow = function() {
+        aboutBlueOutShow();
+        aboutHoverHide();
+        aboutWhiteInShow();
+        aboutSubmenuClassShow();
+    };
+
+    var resSubmenuClassShow = function() {
+        $submenu.removeClass('hide');
+        $submenu.addClass('show');
+    };
+    var resSubmenuClassHide = function() {
+        $submenu.removeClass('show');
+        $submenu.addClass('hide');
+    };
+    var aboutSubmenuClassShow = function() {
+        $aboutSubmenu.removeClass('hide');
+        $aboutSubmenu.addClass('show');
+    };
+    var aboutSubmenuClassHide = function() {
         $aboutSubmenu.removeClass('show');
         $aboutSubmenu.addClass('hide');
+    };
+
+    var resBlueOutShow = function() {
+        $pullOutImg.addClass('show');
+        $pullOutImg.removeClass('hide');
+    };
+    var resBlueOutHide = function() {
+        $pullOutImg.addClass('hide');
+        $pullOutImg.removeClass('show');
+    };
+    var resWhiteInShow = function() {
+        $pullInImg.removeClass('hide');
+        $pullInImg.addClass('show');
+    };
+    var resWhiteInHide = function() {
+        $pullInImg.addClass('hide');
+        $pullInImg.removeClass('show');
+    };
+    var resWhiteOutShow = function() {
+        $aboutInvertPullOutImg.removeClass('hide');
+        $aboutInvertPullOutImg.addClass('show');
+    };
+    var resWhiteOutHide = function() {
+        $invertPullOutImg.addClass('hide');
+        $invertPullOutImg.removeClass('show');
+    };
+    var resHoverShow = function() {
+        $hoverPullOutImg.addClass('show');
+        $hoverPullOutImg.removeClass('hide');
+    };
+    var resHoverHide = function() {
+        $hoverPullOutImg.addClass('hide');
+        $hoverPullOutImg.removeClass('show');
+    };
+
+    var aboutBlueOutShow = function() {
+        $aboutPullOutImg.addClass('show');
+        $aboutPullOutImg.removeClass('hide');
+    };
+    var aboutBlueOutHide = function() {
+        $aboutPullOutImg.addClass('hide');
+        $aboutPullOutImg.removeClass('show');
+    };
+    var aboutWhiteInShow = function() {
+        $aboutPullInImg.addClass('show');
+        $aboutPullInImg.removeClass('hide');
+    };
+    var aboutWhiteInHide = function() {
+        $aboutPullInImg.addClass('hide');
+        $aboutPullInImg.removeClass('show');
+    };
+    var aboutWhiteOutShow = function() {
+        $aboutInvertPullOutImg.addClass('show');
+        $aboutInvertPullOutImg.removeClass('hide');
+    };
+    var aboutWhiteOutHide = function() {
+        $aboutInvertPullOutImg.addClass('hide');
+        $aboutInvertPullOutImg.removeClass('show');
+    };
+    var aboutHoverShow = function() {
+        $aboutHoverPullOutImg.addClass('show');
+        $aboutHoverPullOutImg.removeClass('hide');
+    };
+    var aboutHoverHide = function() {
+        $aboutHoverPullOutImg.addClass('hide');
+        $aboutHoverPullOutImg.removeClass('show');
     };
 
     $('#HomeButton').on('click', function() {
