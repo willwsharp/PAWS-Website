@@ -19,22 +19,24 @@ $(document).ready(function() {
 
     var prevMenu = 0;
     var prevItem = 0;
+    var prevSubmenu;
     //var selectedMenu = 0;
     var showCurrent = function(menu, item) {
         var itemToShow = item;
         var selectedMenu = menu;
-        //var selectedResourceSubmenu = menu - 8;
         var legalTemp = 0;
 
         console.log(selectedMenu);
         changeSelectedMenu(menu);
         if (selectedMenu === 1) {
-            resSubmenuClassHide();
+            prevSubmenu = 1;
+            resourceSubmenuHide();
             aboutSubmenuFunctions();
             return;
         }
         else if (selectedMenu === 3) {
-            aboutSubmenuClassHide();
+            prevSubmenu = 3;
+            aboutSubmenuHide();
             resourceSubmenuFunctions();
             return;
         }
@@ -45,7 +47,7 @@ $(document).ready(function() {
             changeSelectedMenu(menu);
         }
         else if (selectedMenu >= 8 && selectedMenu < 15) {
-            resBlueOutHide();
+            resWhiteInHide();
             resWhiteOutShow();
             resSubmenuClassHide();
         }
@@ -54,17 +56,7 @@ $(document).ready(function() {
             aboutWhiteOutShow();
             aboutSubmenuClassHide();
         }
-
-        if (selectedMenu === 6 || selectedMenu === 7) {
-            legalTemp = selectedMenu - 6;
-            $bottomLegal.removeClass('selectedLegal');
-            $bottomLegal.eq(legalTemp).addClass('selectedLegal');
-            $menuOpt.removeClass('selectedMenu');
-        }
-        else {
-            $bottomLegal.removeClass('selectedLegal');
-        }
-
+        
         if (itemToShow === prevItem)
             return;
         $content.removeClass('rollOut');
@@ -85,6 +77,15 @@ $(document).ready(function() {
 
     var changeSelectedMenu = function(selectedMenu) {
         if (selectedMenu < 8) {
+            if (selectedMenu === 6 || selectedMenu === 7) {
+                legalTemp = selectedMenu - 6;
+                $bottomLegal.removeClass('selectedLegal');
+                $bottomLegal.eq(legalTemp).addClass('selectedLegal');
+                $menuOpt.removeClass('selectedMenu');
+            }
+            else {
+                $bottomLegal.removeClass('selectedLegal');
+            }
             $menuOpt.removeClass('selectedMenu');
             $menuOpt.eq(selectedMenu).addClass('selectedMenu');
         }
@@ -103,16 +104,20 @@ $(document).ready(function() {
     var resourceSubmenuFunctions = function() {
         if ($submenu.hasClass('show')) {
             if ($submenuOpt.hasClass('selectedSubmenu')) {
+                //console.log('resource: 1');
                 resBlueOutHide();
                 resWhiteInHide();
                 resWhiteOutShow();
                 resSubmenuClassHide();
             }
             else {
+                //console.log('resource: 2');
                 resourceSubmenuHide_Selected();
+                interMenuFunctions();
             }
         }
         else {
+            //console.log('resource: 3');
             resourceSubmenuShow();
         }
     };
@@ -120,59 +125,46 @@ $(document).ready(function() {
     var aboutSubmenuFunctions = function() {
         if ($aboutSubmenu.hasClass('show')) {
             if ($aboutSubmenuOpt.hasClass('selectedSubmenu')) {
+                //console.log('about: 1');
                 aboutBlueOutHide();
                 aboutWhiteInHide();
                 aboutWhiteOutShow();
                 aboutSubmenuClassHide();
             }
             else {
+                //console.log('about: 2');
                 aboutSubmenuHide_Selected();
+                interMenuFunctions();
             }
         }
         else {
+            //console.log('about: 3');
             aboutSubmenuShow();
         }
     };
 
     var hideSubmenus = function() {
-        if ($submenu.hasClass('show'))
-            resourceSubmenuHide();
-        if ($aboutSubmenu.hasClass('show'))
-            resourceSubmenuHide();
+        resourceSubmenuHide();
         aboutSubmenuHide();
     };
 
     var interMenuFunctions = function() {
-        var primaryMenu;
+        var primaryMenu = prevMenu;
         console.log("prevMenu: " + prevMenu);
-        console.log("selectedMenu: " + selectedMenu);
-        if (selectedMenu === 3 || (prevMenu >= 8 && prevMenu < 15)) {
+        console.log("prevSubmenu: " + prevSubmenu);
+        if (prevMenu >= 8 && prevMenu < 15) {
             primaryMenu = 3;
-            changeSelectedMenu(primaryMenu);
-            resourceSubmenuShow();
-            /*$menuOpt.removeClass('selectedMenu');
-             $menuOpt.eq(primaryMenu).addClass('selectedMenu');
-             $submenuOpt.eq(prevMenu).removeClass('selectedSubmenu');
-             $submenuOpt.eq(prevMenu).addClass('selectedSubmenu');
-             $invertPullOutImg.removeClass('hide');
-             $invertPullOutImg.addClass('show');
-             $aboutSubmenuOpt.removeClass('selectedSubmenu');*/
-
         }
-        else if (selectedMenu === 1 || prevMenu > 14) {
+        if (prevMenu >= 15) {
             primaryMenu = 1;
-            $menuOpt.removeClass('selectedMenu');
-            $menuOpt.eq(primaryMenu).addClass('selectedMenu');
-            $aboutSubmenuOpt.eq(prevMenu).removeClass('selectedSubmenu');
-            $aboutSubmenuOpt.eq(prevMenu).addClass('selectedSubmenu');
-            resWhiteOutShow();
-            $submenuOpt.removeClass('selectedSubmenu');
         }
         else {
-            $menuOpt.removeClass('selectedMenu');
-            $menuOpt.eq(prevMenu).addClass('selectedMenu');
+            $submenuOpt.removeClass('selectedSubmenu');
+            $aboutSubmenuOpt.removeClass('selectedSubmenu');
+            hideSubmenus();
+            changeSelectedMenu(prevMenu);
         }
-
+        console.log("primaryMenu: " + primaryMenu);
     };
 
     var resourceSubmenuHide = function() {
@@ -255,8 +247,8 @@ $(document).ready(function() {
         $pullInImg.removeClass('show');
     };
     var resWhiteOutShow = function() {
-        $aboutInvertPullOutImg.removeClass('hide');
-        $aboutInvertPullOutImg.addClass('show');
+        $invertPullOutImg.removeClass('hide');
+        $invertPullOutImg.addClass('show');
     };
     var resWhiteOutHide = function() {
         $invertPullOutImg.addClass('hide');
