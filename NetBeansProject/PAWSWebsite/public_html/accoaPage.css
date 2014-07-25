@@ -63,3 +63,8 @@
 #accoaLink:hover {
     color: black;
 }
+
+#coaContact {
+    position: absolute;
+    margin-left: 25px;
+}

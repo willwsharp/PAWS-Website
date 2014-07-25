@@ -19,23 +19,19 @@ $(document).ready(function() {
 
     var prevMenu = 0;
     var prevItem = 0;
-    var prevSubmenu;
     //var selectedMenu = 0;
     var showCurrent = function(menu, item) {
         var itemToShow = item;
         var selectedMenu = menu;
-        var legalTemp = 0;
 
-        console.log(selectedMenu);
+        //console.log(selectedMenu);
         changeSelectedMenu(menu);
         if (selectedMenu === 1) {
-            prevSubmenu = 1;
             resourceSubmenuHide();
             aboutSubmenuFunctions();
             return;
         }
         else if (selectedMenu === 3) {
-            prevSubmenu = 3;
             aboutSubmenuHide();
             resourceSubmenuFunctions();
             return;
@@ -47,16 +43,18 @@ $(document).ready(function() {
             changeSelectedMenu(menu);
         }
         else if (selectedMenu >= 8 && selectedMenu < 15) {
+            $aboutSubmenuOpt.removeClass('selectedSubmenu');
             resWhiteInHide();
             resWhiteOutShow();
             resSubmenuClassHide();
         }
         else if (selectedMenu >= 15) {
+            $submenuOpt.removeClass('selectedSubmenu');
             aboutWhiteInHide();
             aboutWhiteOutShow();
             aboutSubmenuClassHide();
         }
-        
+
         if (itemToShow === prevItem)
             return;
         $content.removeClass('rollOut');
@@ -117,7 +115,7 @@ $(document).ready(function() {
             }
         }
         else {
-            //console.log('resource: 3');
+            //console.log('open resource submenu');
             resourceSubmenuShow();
         }
     };
@@ -150,13 +148,20 @@ $(document).ready(function() {
 
     var interMenuFunctions = function() {
         var primaryMenu = prevMenu;
-        console.log("prevMenu: " + prevMenu);
-        console.log("prevSubmenu: " + prevSubmenu);
+        //console.log("prevMenu: " + prevMenu);
         if (prevMenu >= 8 && prevMenu < 15) {
             primaryMenu = 3;
+            aboutSubmenuHide();
+            $menuOpt.removeClass('selectedMenu');
+            $menuOpt.eq(primaryMenu).addClass('selectedMenu');
+            resourceSubmenuHide_Selected();
         }
-        if (prevMenu >= 15) {
+        else if (prevMenu >= 15) {
             primaryMenu = 1;
+            resourceSubmenuHide();
+            $menuOpt.removeClass('selectedMenu');
+            $menuOpt.eq(primaryMenu).addClass('selectedMenu');
+            aboutSubmenuHide_Selected();
         }
         else {
             $submenuOpt.removeClass('selectedSubmenu');
@@ -164,7 +169,7 @@ $(document).ready(function() {
             hideSubmenus();
             changeSelectedMenu(prevMenu);
         }
-        console.log("primaryMenu: " + primaryMenu);
+        //console.log("primaryMenu: " + primaryMenu);
     };
 
     var resourceSubmenuHide = function() {
@@ -214,20 +219,20 @@ $(document).ready(function() {
     };
 
     var resSubmenuClassShow = function() {
-        $submenu.removeClass('hide');
         $submenu.addClass('show');
+        $submenu.removeClass('hide');
     };
     var resSubmenuClassHide = function() {
-        $submenu.removeClass('show');
         $submenu.addClass('hide');
+        $submenu.removeClass('show');
     };
     var aboutSubmenuClassShow = function() {
-        $aboutSubmenu.removeClass('hide');
         $aboutSubmenu.addClass('show');
+        $aboutSubmenu.removeClass('hide');
     };
     var aboutSubmenuClassHide = function() {
-        $aboutSubmenu.removeClass('show');
         $aboutSubmenu.addClass('hide');
+        $aboutSubmenu.removeClass('show');
     };
 
     var resBlueOutShow = function() {
@@ -239,16 +244,16 @@ $(document).ready(function() {
         $pullOutImg.removeClass('show');
     };
     var resWhiteInShow = function() {
-        $pullInImg.removeClass('hide');
         $pullInImg.addClass('show');
+        $pullInImg.removeClass('hide');
     };
     var resWhiteInHide = function() {
         $pullInImg.addClass('hide');
         $pullInImg.removeClass('show');
     };
     var resWhiteOutShow = function() {
-        $invertPullOutImg.removeClass('hide');
         $invertPullOutImg.addClass('show');
+        $invertPullOutImg.removeClass('hide');
     };
     var resWhiteOutHide = function() {
         $invertPullOutImg.addClass('hide');
