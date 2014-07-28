@@ -63,7 +63,7 @@ $(document).ready(function() {
 
         $content.eq(prevItem).removeClass('rollIn');
         //TODO - improve the way this works
-        $content.eq(prevItem).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+        $content.eq(prevItem).one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function() {
             $content.eq(prevItem).removeClass('contentShow');
             $content.eq(itemToShow).addClass('contentShow');
             $content.eq(itemToShow).addClass('rollIn');
