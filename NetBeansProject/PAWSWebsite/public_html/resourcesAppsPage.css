@@ -1,4 +1,4 @@
-//TODO Make sure mobile devices are taken to actual store!
+/*TODO Make sure mobile devices are taken to actual store!*/
 #apps {
     
 }
@@ -27,7 +27,6 @@
     border: solid 2px;
     font-size: 16px;
     padding: 5px 5px 5px 5px;
-    //text-align: center;
     z-index: -1;            
 }
 
