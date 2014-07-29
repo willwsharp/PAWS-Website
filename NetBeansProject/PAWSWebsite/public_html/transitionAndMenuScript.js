@@ -15,7 +15,7 @@ $(document).ready(function() {
     $aboutHoverPullOutImg = $('#aboutHoverPullOutImg');
     $aboutInvertPullOutImg = $('#aboutInvertPullOutImg');
     $aboutPullInImg = $('#aboutPullInImg');
-
+    var map;
 
     var prevMenu = 0;
     var prevItem = 0;
@@ -57,6 +57,10 @@ $(document).ready(function() {
 
         if (itemToShow === prevItem)
             return;
+        
+        if(selectedMenu === 5) {
+            resizeMap();
+        }
         $content.removeClass('rollOut');
         $content.removeClass('contentHide');
         $content.eq(prevItem).addClass('rollOut');
@@ -71,6 +75,15 @@ $(document).ready(function() {
             prevItem = item;
             prevMenu = menu;
         });
+    };
+
+    var resizeMap = function() {
+        var mapOptions = {
+            center: new google.maps.LatLng(38.712547,-77.794917),
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        
     };
 
     var changeSelectedMenu = function(selectedMenu) {
