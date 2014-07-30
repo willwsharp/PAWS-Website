@@ -15,16 +15,15 @@ $(document).ready(function() {
     $aboutHoverPullOutImg = $('#aboutHoverPullOutImg');
     $aboutInvertPullOutImg = $('#aboutInvertPullOutImg');
     $aboutPullInImg = $('#aboutPullInImg');
-    var map;
 
-    var prevMenu = 0;
     var prevItem = 0;
+    var prevMenu = 0;
     //var selectedMenu = 0;
     var showCurrent = function(menu, item) {
         var itemToShow = item;
         var selectedMenu = menu;
-
-        //console.log(selectedMenu);
+        
+        console.log(selectedMenu);
         changeSelectedMenu(menu);
         if (selectedMenu === 1) {
             resourceSubmenuHide();
@@ -57,10 +56,7 @@ $(document).ready(function() {
 
         if (itemToShow === prevItem)
             return;
-        
-        if(selectedMenu === 5) {
-            resizeMap();
-        }
+
         $content.removeClass('rollOut');
         $content.removeClass('contentHide');
         $content.eq(prevItem).addClass('rollOut');
@@ -74,16 +70,8 @@ $(document).ready(function() {
             $content.eq(itemToShow).removeClass('rollOut');
             prevItem = item;
             prevMenu = menu;
+            mapResizeVar = 1;
         });
-    };
-
-    var resizeMap = function() {
-        var mapOptions = {
-            center: new google.maps.LatLng(38.712547,-77.794917),
-            zoom: 8,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        
     };
 
     var changeSelectedMenu = function(selectedMenu) {
@@ -115,20 +103,17 @@ $(document).ready(function() {
     var resourceSubmenuFunctions = function() {
         if ($submenu.hasClass('show')) {
             if ($submenuOpt.hasClass('selectedSubmenu')) {
-                //console.log('resource: 1');
                 resBlueOutHide();
                 resWhiteInHide();
                 resWhiteOutShow();
                 resSubmenuClassHide();
             }
             else {
-                //console.log('resource: 2');
                 resourceSubmenuHide_Selected();
                 interMenuFunctions();
             }
         }
         else {
-            //console.log('open resource submenu');
             resourceSubmenuShow();
         }
     };
@@ -136,20 +121,17 @@ $(document).ready(function() {
     var aboutSubmenuFunctions = function() {
         if ($aboutSubmenu.hasClass('show')) {
             if ($aboutSubmenuOpt.hasClass('selectedSubmenu')) {
-                //console.log('about: 1');
                 aboutBlueOutHide();
                 aboutWhiteInHide();
                 aboutWhiteOutShow();
                 aboutSubmenuClassHide();
             }
             else {
-                //console.log('about: 2');
                 aboutSubmenuHide_Selected();
                 interMenuFunctions();
             }
         }
         else {
-            //console.log('about: 3');
             aboutSubmenuShow();
         }
     };
@@ -161,7 +143,6 @@ $(document).ready(function() {
 
     var interMenuFunctions = function() {
         var primaryMenu = prevMenu;
-        //console.log("prevMenu: " + prevMenu);
         if (prevMenu >= 8 && prevMenu < 15) {
             primaryMenu = 3;
             aboutSubmenuHide();
@@ -182,7 +163,6 @@ $(document).ready(function() {
             hideSubmenus();
             changeSelectedMenu(prevMenu);
         }
-        //console.log("primaryMenu: " + primaryMenu);
     };
 
     var resourceSubmenuHide = function() {
@@ -336,6 +316,7 @@ $(document).ready(function() {
 
     $('#ContactButton').on('click', function() {
         showCurrent(5, 5);
+        mapResizeVar = 1;
     });
 
     $('#disclaimer').on('click', function() {
@@ -346,7 +327,6 @@ $(document).ready(function() {
     });
 
     $('#generalButton').on('click', function() {
-        //showCurrent(0, 0);
         showCurrent(8, 8);
     });
 
