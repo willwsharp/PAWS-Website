@@ -1,27 +1,21 @@
-.shortBlurb {
-    position: relative;
-    width: 585px;
-    height: 165px;
-    margin-top: 25px;
-    display: block;
-    background: #ececbd;
-    margin-left: auto;
-    margin-right: auto;
-    border:  solid 2px #000;
-}
 #homePage {
 }
 
-.blurbText {
+#shortBlurb {
+    display: block;
     position: relative;
-    text-align: right;
     font-size: 18px;
-    color: black;
-    left: 10px;
-    top: 20px;
-    margin-top: auto;
-    margin-bottom: 55%;
+    margin-left: 7px;
+    width: 95%;
+    height: 28%;
+    margin-top: 25px;
+    background: #ececbd;
+    padding: 5px 5px 5px 5px;
+    border: solid 2px #000;
+    text-align: justify;
+    word-wrap: normal;
 }
+
 
 .initialContent {
     -webkit-animation: fadeIn forwards 2s;

@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Law Office of Patricia A. Woodward</title>
+        <link type='text/css' rel='stylesheet' href='menuReset.css'>
         <link type='text/css' rel='stylesheet' href='bioPage.css'>
         <link type='text/css' rel='stylesheet' href='animations.css'>
         <link type='text/css' rel='stylesheet' href='bottomLegalInfo.css'>
@@ -28,6 +29,7 @@
         <link type='text/css' rel='stylesheet' href='accoaPage.css'>
         <link type='text/css' rel='stylesheet' href='//fonts.googleapis.com/css?family=Doppio+One'>
 
+
         <script type='text/javascript' src='//code.jquery.com/jquery-1.7.1.min.js'></script>
         <script type='text/javascript'>
             var mapResizeVar = 0;
@@ -41,7 +43,7 @@
             var center;
             $(document).ready(function() {
                 function initialize() {
-                    center = new google.maps.LatLng(38.712547, -77.794917);
+                    var center = new google.maps.LatLng(38.712547, -77.794917);
                     var mapOptions = {
                         center: new google.maps.LatLng(38.712547, -77.794917),
                         zoom: 15,
@@ -143,12 +145,11 @@
                     <img class='building' alt='sixthImg.jpg' src='http://i.imgur.com/IY8zacX.jpg?1'>
                 </div>          
             </div>
-            <div class='shortBlurb'>
-                <span class='blurbText'> Patricia Woodward has been 
-                    practicing law in Fauquier County, Virginia for more than thirty years and
-                    has established herself as an experienced and effective attorney in 
-                    her areas of concentration.
-                </span>
+            <div id='shortBlurb'>
+                Patricia Woodward has been 
+                practicing law in Fauquier County, Virginia for more than thirty years and
+                has established herself as an experienced and effective attorney in 
+                her areas of concentration.
             </div>
         </div>
         <div class='contentPanes' id='aboutPage'>           
@@ -189,7 +190,7 @@
             </div>
             <div id='moreInfoDiv'>
                 <a id='moreInfoLink' target='_blank' href='feeAndRetainer.pdf'>
-                    Click here for a detailed description of Ms. Woodward's fee and retainer policy
+                    Fee and Retainer policy
                 </a>
             </div>
             <div id='genInfoPageBody'>
@@ -602,7 +603,7 @@
             </div>
             <div id='additionalGroupInfo'>
                 <a id='additionalGroupLink' target='_blank' href='Resume.pdf'>
-                    Click here for Ms. Woodward's Curiculum Vitae
+                    Ms. Woodward's Curiculum Vitae
                 </a>
             </div>          
             <div id='bioPageBody'>             
@@ -615,7 +616,7 @@
                 husband have lived in Fauquier County for almost thirty years.  
                 Since moving to the county, she has been active in many community groups.
                 Some of the groups with which she has been involved include the following:
-
+                <br><br>
                 <ul id='bioBodyGroupList'>
                     <li>Altrusa International, Inc. [International service organization]</li>
                     <li>Fauquier Health Foundation</li>
@@ -640,7 +641,7 @@
             </div>
             <div id='accoaDiv'>
                 <a id='accoaLink' target='_blank' href='accoaDuties.pdf'>
-                    Click here for a full description of Duties and Responsibilities
+                    Duties and Responsibilities
                 </a>
             </div>
             <div id='accoaPageBody'>
@@ -686,7 +687,7 @@
                             <a id='bioButton' href='#'>Bio</a>
                         </li>
                         <li>
-                            <a id='accoaButton' href='#'>Assistant Commissioner of Accounts</a>
+                            <a id='accoaButton' href='#'>ACOA</a>
                         </li>
                     </ul>
                 </li>

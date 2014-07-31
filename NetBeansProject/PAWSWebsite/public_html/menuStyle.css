@@ -3,8 +3,6 @@
     box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;
     width: 181px;
     height: 253px;
-    -webkit-transform-origin: 82.3222891566px 117.9820368079px 0px;
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
@@ -30,11 +28,11 @@
     border-top-color: rgb(204, 204, 204);
 }
 
-
 .menu li a {
     text-align: center;
+    font-size: 1em;
     display: block;
-    padding: 10.5px 15px;
+    padding: 12.5px 15px;
     text-decoration: none;
     font-weight: bold;
     color: rgb(91, 172, 233);
@@ -55,9 +53,7 @@
     color: rgb(255, 255, 255);
 }
 
-
 #submenu {
-    /*submenu*/
     box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 20px;            
     background: white;
     position: absolute;
@@ -66,8 +62,10 @@
     list-style: none;
     margin: 0px 0px 3em;
     padding: 0px;
-    overflow: hidden;
     width: 115px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(204, 204, 204);
 }
 
 #submenu li a.selectedSubmenu {
@@ -80,9 +78,12 @@
     text-align: center;
     background: white;
     font-size: 12px;
-    border: 1px solid rgb(204, 204, 204); 
-    height: 19.4px;
+    font-weight: bold;
+    height: 16.5px;
     transition: all 0s;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(204, 204, 204);
 }
 
 #submenu li a:hover {
@@ -110,11 +111,12 @@
 
 #aboutSubmenu li a {
     position: relative;
+    font-weight: bold;
     text-align: center;
     background: white;
     font-size: 12px;
-    border: 1px solid rgb(204, 204, 204); 
     transition: all 0s;
+    height: 16px;
 }
 
 #aboutSubmenu li a:hover {
