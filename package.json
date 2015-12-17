@@ -1,0 +1,23 @@
+{
+  "name": "pawswebproject",
+  "version": "2.0.0",
+  "description": "website for patwoodwardlawoffice.com",
+  "main": "index.js",
+  "dependencies": {
+    "nodejs": "^0.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willwsharp/PAWSWebProject.git"
+  },
+  "author": "Will Sharp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willwsharp/PAWSWebProject/issues"
+  },
+  "homepage": "https://github.com/willwsharp/PAWSWebProject#readme"
+}
