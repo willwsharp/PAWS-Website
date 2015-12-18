@@ -1,11 +1,14 @@
-$(document).ready(function() {
-    $(".slideshow div:gt(0)").hide();
-    setInterval(function() {
-        $('.slideshow div:first')
+
+module.exports = {
+    slideshow: function () {
+        $(".slideshow div:gt(0)").hide();
+        setInterval(function () {
+            $('.slideshow div:first')
                 .fadeOut(1200)
                 .next()
                 .fadeIn(1200)
                 .end()
                 .appendTo('.slideshow');
-    }, 5000);
-});
+        }, 5000);
+    }
+}
